@@ -3,13 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>YOUR NAME – Academic Website</title>
+  <title>Álvaro Zúñiga-Cordero – Academic Website</title>
   <style>
-    /* Basic reset */
+    /* ---------- Base styles ---------- */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -28,6 +32,7 @@
       text-decoration: underline;
     }
 
+    /* ---------- Layout ---------- */
     header {
       background-color: #ffffff;
       border-bottom: 1px solid #ddd;
@@ -37,19 +42,20 @@
     }
 
     .nav-container {
-      max-width: 960px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 0.8rem 1rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 0.75rem;
       flex-wrap: wrap;
-      gap: 0.5rem;
     }
 
     .site-title {
       font-size: 1.1rem;
       font-weight: 600;
+      letter-spacing: 0.03em;
     }
 
     nav ul {
@@ -70,65 +76,22 @@
     }
 
     main {
-      max-width: 960px;
+      max-width: 1100px;
       margin: 1.5rem auto 2.5rem auto;
       padding: 0 1rem;
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 1.5rem;
-      align-items: start;
-      margin-bottom: 2rem;
-    }
-
-    .profile-photo {
-      width: 100%;
-      max-width: 180px;
-      border-radius: 8px;
-      object-fit: cover;
-      border: 1px solid #ddd;
-    }
-
-    .hero-text h1 {
-      font-size: 1.8rem;
-      margin-bottom: 0.3rem;
-    }
-
-    .hero-text h2 {
-      font-size: 1.05rem;
-      font-weight: 400;
-      color: #555;
-      margin-bottom: 0.7rem;
-    }
-
-    .contact-info {
-      font-size: 0.95rem;
-      margin-bottom: 0.7rem;
-    }
-
-    .contact-info div {
-      margin-bottom: 0.15rem;
-    }
-
-    .cv-link {
-      display: inline-block;
-      margin-top: 0.3rem;
-      font-size: 0.95rem;
-      font-weight: 500;
     }
 
     section {
       margin-bottom: 2rem;
       background-color: #ffffff;
       padding: 1.25rem 1.25rem 1.5rem;
-      border-radius: 8px;
+      border-radius: 10px;
       border: 1px solid #e2e2e2;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
     }
 
     section h3 {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       margin-bottom: 0.6rem;
       border-bottom: 1px solid #e0e0e0;
       padding-bottom: 0.4rem;
@@ -155,18 +118,232 @@
       padding: 1.5rem 0 2rem;
     }
 
-    @media (max-width: 680px) {
+    /* ---------- Hero / About ---------- */
+    .hero {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 1.8rem;
+      align-items: start;
+    }
+
+    .profile-photo {
+      width: 100%;
+      max-width: 200px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 1px solid #ddd;
+    }
+
+    .hero-text h1 {
+      font-size: 1.9rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .hero-text h2 {
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: #555;
+      margin-bottom: 0.8rem;
+    }
+
+    .contact-info {
+      font-size: 0.95rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .contact-info div {
+      margin-bottom: 0.15rem;
+    }
+
+    .cv-link,
+    .button-link {
+      display: inline-block;
+      margin-top: 0.4rem;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border-radius: 999px;
+      border: 1px solid #0044cc;
+      color: #0044cc;
+      background-color: #f7f9ff;
+      text-decoration: none;
+      transition: background-color 0.2s, color 0.2s, transform 0.1s;
+    }
+
+    .cv-link:hover,
+    .button-link:hover {
+      background-color: #0044cc;
+      color: #ffffff;
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .tagline {
+      font-size: 0.95rem;
+      color: #555;
+      margin-top: 0.4rem;
+    }
+
+    /* ---------- Research Tabs ---------- */
+    .tabs {
+      margin-top: 0.6rem;
+    }
+
+    .tab-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .tab-button {
+      padding: 0.35rem 0.75rem;
+      font-size: 0.9rem;
+      border-radius: 999px;
+      border: 1px solid #ccc;
+      background-color: #f5f5f5;
+      cursor: pointer;
+      transition: background-color 0.2s, border-color 0.2s;
+    }
+
+    .tab-button.active {
+      background-color: #0044cc;
+      color: #ffffff;
+      border-color: #0044cc;
+    }
+
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.25s ease-out;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .research-item {
+      margin-bottom: 0.6rem;
+    }
+
+    .research-title {
+      font-weight: 600;
+    }
+
+    .research-meta {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .research-note {
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* ---------- Cards / grids ---------- */
+    .card-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.9rem;
+      margin-top: 0.6rem;
+    }
+
+    .card {
+      border-radius: 10px;
+      border: 1px solid #e4e4e4;
+      padding: 0.9rem 1rem;
+      background-color: #fafafa;
+      font-size: 0.95rem;
+    }
+
+    .card-title {
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.1rem 0.5rem;
+      font-size: 0.75rem;
+      border-radius: 999px;
+      background-color: #eef0ff;
+      color: #333;
+      margin-left: 0.4rem;
+    }
+
+    /* ---------- Collapsible CV block ---------- */
+    .collapsible {
+      margin-top: 0.5rem;
+      border-radius: 10px;
+      border: 1px solid #e0e0e0;
+      background-color: #fafafa;
+      padding: 0.8rem 0.9rem;
+      font-size: 0.95rem;
+    }
+
+    .collapsible-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .collapsible-header span {
+      font-weight: 600;
+    }
+
+    .collapsible-icon {
+      font-size: 1.1rem;
+      transition: transform 0.2s;
+    }
+
+    .collapsible-body {
+      margin-top: 0.6rem;
+      display: none;
+    }
+
+    .collapsible-body.open {
+      display: block;
+    }
+
+    .collapsible-icon.open {
+      transform: rotate(90deg);
+    }
+
+    /* ---------- Back to top button ---------- */
+    .back-to-top {
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      padding: 0.45rem 0.7rem;
+      font-size: 0.8rem;
+      border-radius: 999px;
+      border: 1px solid #ccc;
+      background-color: #ffffff;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      display: none;
+      z-index: 20;
+    }
+
+    .back-to-top:hover {
+      background-color: #f0f0f0;
+    }
+
+    @media (max-width: 780px) {
       .hero {
         grid-template-columns: 1fr;
         justify-items: center;
         text-align: center;
       }
-
       .hero-text {
         text-align: left;
         width: 100%;
       }
-
       nav ul {
         justify-content: flex-start;
       }
@@ -181,6 +358,8 @@
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#research">Research</a></li>
+          <li><a href="#databases">Databases</a></li>
+          <li><a href="#outreach">Outreach</a></li>
           <li><a href="#teaching">Teaching</a></li>
           <li><a href="#cv">CV</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -190,97 +369,394 @@
   </header>
 
   <main>
-    <!-- Top section with photo and basic info -->
+    <!-- ABOUT -->
     <section id="about">
       <div class="hero">
         <!-- Replace photo.jpg with your actual file name -->
-        <img src="PSE_a.zuniga-cordero-2.jpg" alt="Portrait of YOUR NAME" class="profile-photo" />
+        <img src="photo.jpg" alt="Portrait of Álvaro Zúñiga-Cordero" class="profile-photo" />
         <div class="hero-text">
-          <h1>ÁLVARO ZÚÑIGA-CORDERO</h1>
-          <h2>Position / Postdoctoral Researcher in [Field], [Institution]</h2>
+          <h1>Álvaro Zúñiga-Cordero</h1>
+          <h2>Marie Skłodowska-Curie COFUND–C2W Postdoctoral Researcher, University of Namur</h2>
 
           <div class="contact-info">
-            <div>[Department], [Institution]</div>
-            <div>[City], [Country]</div>
-            <div>Email: <a href="mailto:you@example.com">you@example.com</a></div>
-            <!-- Optional: personal domains, ORCID, etc. -->
-            <!-- <div>Website: <a href="https://yourdomain.com">yourdomain.com</a></div> -->
+            <div>Department of Economics, University of Namur</div>
+            <div>Namur, Belgium</div>
+            <div>Email: <a href="mailto:alvaro.zunigacordero@unamur.be">alvaro.zunigacordero@unamur.be</a></div>
+            <div>Alt. email: <a href="mailto:a.zuniga-cordero@psemail.eu">a.zuniga-cordero@psemail.eu</a></div>
           </div>
 
           <p>
-            I am a [your position: e.g., postdoctoral researcher] in [field] at [institution].
-            My research focuses on [short summary: e.g., political economy, inequality,
-            and the effects of climate change on electoral behaviour].
+            I am a Marie Skłodowska-Curie COFUND–C2W Postdoctoral Researcher at the University of Namur.
+            I earned my PhD in Economics from the Paris School of Economics in 2024, following the APE master’s
+            programme, and spent 2021–2022 as an exchange researcher at the London School of Economics and the
+            Centre for Economic Performance.
+          </p>
+          <p>
+            Before moving to France, I worked in financial markets and later in the Research Department of the
+            Central Bank of Costa Rica. I hold bachelor’s degrees in Economics and Sociology from the University
+            of Costa Rica, and an IB Diploma from Li Po Chun UWC of Hong Kong.
+          </p>
+          <p>
+            My research studies how inequality, politics, trade, migration, and climate change shape one another.
+            I am currently examining how globalisation and inequality affect electoral outcomes, with new projects
+            on the political effects of extreme weather events and climate policies.
+          </p>
+          <p>
+            I have consulted for the World Bank and the United Nations ECLAC, I serve as Coordinator for Central
+            America and the Caribbean at the World Inequality Lab, and I am affiliated with the Programa Estado de
+            la Nación in Costa Rica.
           </p>
 
-          <!-- CV link (you will create the file later) -->
-          <a class="cv-link" href="cv.pdf" target="_blank" rel="noopener" id="cv">
+          <p class="tagline">
+            Research interests: economic inequality, political economy, trade, migration, applied econometrics.
+          </p>
+
+          <a class="cv-link" href="cv.pdf" target="_blank" rel="noopener">
             Download CV (PDF)
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Research section -->
+    <!-- RESEARCH -->
     <section id="research">
       <h3>Research</h3>
       <p>
-        My research interests include [keywords: e.g., political economy, distributional
-        conflict, climate policy, electoral behaviour]. Below is a selection of ongoing
-        projects and published work.
+        My work combines rich administrative, survey, and spatial data to study how inequality, globalisation,
+        and climate change influence political behaviour and long-run development.
       </p>
 
-      <ul>
-        <li>
-          <span class="year">2025</span>
-          <strong>Title of Paper or Project</strong> – with Co-author(s).  
-          <em>Journal / Working paper</em>. Short 1–2 line description of what the paper does.
-        </li>
-        <li>
-          <span class="year">2024</span>
-          <strong>Another Project Title</strong> – Brief description, data used,
-          and contribution.
-        </li>
-        <!-- Add more items as needed -->
-      </ul>
+      <div class="tabs">
+        <div class="tab-buttons">
+          <button class="tab-button active" data-tab="tab-publications">Publications & Book Chapters</button>
+          <button class="tab-button" data-tab="tab-working-papers">Working Papers</button>
+          <button class="tab-button" data-tab="tab-wip">Work in Progress</button>
+        </div>
+
+        <!-- Publications -->
+        <div id="tab-publications" class="tab-content active">
+          <div class="research-item">
+            <div class="research-title">
+              World Inequality Report 2022 <span class="research-meta">World Inequality Lab, 2022</span>
+            </div>
+            <div class="research-note">
+              Contributor to the flagship report on global income and wealth inequality.
+            </div>
+          </div>
+          <div class="research-item">
+            <div class="research-title">
+              Social Inequalities, Identity, and the Structure of Political Cleavages in Argentina, Chile, Colombia,
+              Costa Rica, Mexico, and Peru, 1952–2019
+            </div>
+            <div class="research-meta">
+              Barrera, O., Leiva, A., Martínez-Toledano, C. & Zúñiga-Cordero, Á. (2021), in
+              <em>Political Cleavages and Social Inequalities: A Study of Fifty Democracies, 1948–2020</em>,
+              Harvard University Press.
+            </div>
+          </div>
+        </div>
+
+        <!-- Working Papers -->
+        <div id="tab-working-papers" class="tab-content">
+          <div class="research-item">
+            <div class="research-title">
+              Distributional National Accounts Costa Rica: Inequality from the National to the Local Level (2000–2022)
+            </div>
+            <div class="research-meta">
+              Solo-authored working paper, ready to submit. (8 citations, Google Scholar)
+            </div>
+            <div class="research-note">
+              Constructs Distributional National Accounts integrating surveys, macroeconomic accounts, social security,
+              and tax data to revise national and subnational inequality trends.
+            </div>
+          </div>
+          <div class="research-item">
+            <div class="research-title">
+              Income Shocks, Economic Inequality, and Political Realignment:
+              Voter Turnout and the Shift to a Multi-Party System in Costa Rica
+            </div>
+            <div class="research-meta">
+              With Ronald Alfaro-Redondo. Job-market paper. (1 citation, Google Scholar)
+            </div>
+            <div class="research-note">
+              Uses administrative employer–employee and electoral microdata to study how income shocks and local
+              inequality shape turnout and party competition.
+            </div>
+          </div>
+          <div class="research-item">
+            <div class="research-title">
+              Climate Change and Electoral Behaviour: Evidence from Extreme Weather Events in Costa Rica
+            </div>
+            <div class="research-meta">
+              With Lorenzo Trimarchi & Juan Robalino.
+            </div>
+            <div class="research-note">
+              Links geo-localised weather and disaster data with electoral records to examine how extreme weather
+              affects participation and support for different political alternatives.
+            </div>
+          </div>
+          <div class="research-item">
+            <div class="research-title">
+              Social Inequalities, Identity, and Political Cleavages in Latin America, 1952–2019
+            </div>
+            <div class="research-meta">
+              With Barrera, Leiva & Martínez-Toledano. WID.world Working Paper No. 2021/11.
+            </div>
+          </div>
+        </div>
+
+        <!-- Work in Progress -->
+        <div id="tab-wip" class="tab-content">
+          <div class="research-item">
+            <div class="research-title">
+              Airbnb Penetration, Housing Prices, and Distributional Impacts: Evidence from Italy since 2016
+            </div>
+            <div class="research-meta">
+              With Lorenzo Trimarchi & Giorgio Ferroni.
+            </div>
+            <div class="research-note">
+              Studies how short-term rentals affect housing markets and inequality across Italian cities.
+            </div>
+          </div>
+          <div class="research-item">
+            <div class="research-title">
+              Changes in the Offer of Higher Education and Labour Market Outcomes
+            </div>
+            <div class="research-note">
+              Analyses how the expansion of regional university campuses shapes labour market opportunities
+              and the location decisions of multinational firms in Costa Rica.
+            </div>
+          </div>
+          <div class="research-item">
+            <div class="research-title">
+              Wealth and Income Inequality in Central America and the Caribbean
+            </div>
+            <div class="research-meta">
+              With Ignacio Flores & Yajna Govind.
+            </div>
+          </div>
+          <div class="research-item">
+            <div class="research-title">
+              Survey Evidence on Redistributive Preferences in the Americas
+            </div>
+            <div class="research-note">
+              Examines attitudes towards taxing top incomes and support for international transfers across countries.
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Teaching section -->
+    <!-- DATABASES -->
+    <section id="databases">
+      <h3>Databases</h3>
+      <p>
+        Many of my projects involve constructing and harmonising large administrative and survey datasets.
+        Below is a selection of databases I have developed or contributed to.
+      </p>
+
+      <div class="card-list">
+        <div class="card">
+          <div class="card-title">
+            Distributional National Accounts for Costa Rica (2000–2022)
+          </div>
+          <p>
+            Integrated microdata combining social security records, tax files, household surveys, census data,
+            and national accounts to produce consistent national and subnational inequality measures.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            Electoral & Socioeconomic Microdata, Costa Rica
+          </div>
+          <p>
+            Individual-level voter turnout and registration linked to employer–employee records, local inequality
+            indicators, and polling-station information for presidential and municipal elections.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            Climate & Extreme Weather Exposure Dataset, Costa Rica
+          </div>
+          <p>
+            Geo-localised data on extreme weather events and disasters matched to population, economic activity,
+            and electoral outcomes to study the political consequences of climate shocks.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            Inequality & Political Cleavages in Latin America (1952–2019)
+          </div>
+          <p>
+            Historical database on social inequalities, parties, and voting patterns in six Latin American countries,
+            developed as part of the World Inequality Lab and Harvard University Press volume.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUTREACH -->
+    <section id="outreach">
+      <h3>Outreach & Public Engagement</h3>
+      <p>
+        I collaborate regularly with policy institutions and contribute to public debates on inequality,
+        democracy, and education in Latin America.
+      </p>
+
+      <div class="card-list">
+        <div class="card">
+          <div class="card-title">
+            World Inequality Lab & Programa Estado de la Nación
+          </div>
+          <p>
+            Coordinator for Central America and the Caribbean at the World Inequality Lab, and affiliated researcher at
+            the Programa Estado de la Nación in Costa Rica, contributing to regional analyses of inequality
+            and democratic performance.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            Media Coverage <span class="badge">El País</span>
+          </div>
+          <p>
+            Research on political cleavages and inequality in Latin America has been featured in
+            <em>El País</em> (Spain), including coverage of the political situations in Colombia and Chile.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            National Reports on Education and Democracy
+          </div>
+          <p>
+            Co-author of multiple chapters in the <em>Estado de la Nación</em> and <em>Estado de la Educación</em>
+            reports, focusing on higher education, inequality and social integration, and the state of democracy
+            in Costa Rica (2020–2023).
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            International Policy Work
+          </div>
+          <p>
+            Consultant for the World Bank (Development Research Group) and the United Nations ECLAC, working on
+            projects related to taxation, inequality, and social statistics.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEACHING -->
     <section id="teaching">
       <h3>Teaching</h3>
       <p>
-        I have taught or assisted in the following courses:
+        I have taught a range of courses in international trade and econometrics at the graduate and undergraduate levels.
       </p>
-      <ul>
-        <li>
-          <strong>Course Name</strong>, Institution, Level (Year). Short note on
-          your role (e.g., lecturer / teaching assistant).
-        </li>
-        <li>
-          <strong>Another Course</strong>, Institution, Level (Year). 
-        </li>
-      </ul>
+
+      <div class="card-list">
+        <div class="card">
+          <div class="card-title">
+            International Trade (Graduate) <span class="badge">PSE</span>
+          </div>
+          <p>
+            Paris School of Economics, in English (2022–2025), with Thierry Verdier and Matthieu Parenti.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            Introduction to Econometrics (Undergraduate)
+          </div>
+          <p>
+            Université Paris 1 Panthéon-Sorbonne, in French (2019–2020, 2022–2023), with Christian Doz & Tobias Broer.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            International Trade (Undergraduate)
+          </div>
+          <p>
+            Université Paris 1 Panthéon-Sorbonne, in English/French (2018–2023), with Lionel Fontagné,
+            Mathieu Bas, and Laure Marchal.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            Introduction to Economics (Undergraduate)
+          </div>
+          <p>
+            Université Paris 1 Panthéon-Sorbonne, in French (2018–2019), with N. Canry, O. Havrylchyk & A. Greulich.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <!-- Optional: other section (service, grants, etc.) -->
-    <section>
-      <h3>Other Activities</h3>
-      <ul>
-        <li>Conference presentations: [List a few major ones].</li>
-        <li>Referee service: [Journals or organizations].</li>
-        <li>Grants and awards: [Brief list].</li>
-      </ul>
+    <!-- CV SECTION -->
+    <section id="cv">
+      <h3>Curriculum Vitae</h3>
+      <p>
+        A concise overview of my current position, education, and selected experience is provided below.
+        For full details, please download the PDF.
+      </p>
+
+      <a class="button-link" href="cv.pdf" target="_blank" rel="noopener">
+        Download full CV (PDF)
+      </a>
+
+      <div class="collapsible" id="cv-collapsible">
+        <div class="collapsible-header">
+          <span>Show CV overview</span>
+          <span class="collapsible-icon">▶</span>
+        </div>
+        <div class="collapsible-body">
+          <h4>Academic Appointments</h4>
+          <ul>
+            <li>Postdoctoral Researcher, Marie Skłodowska-Curie COFUND–C2W, University of Namur (2024–present).</li>
+            <li>Coordinator of Studies for Central America and the Caribbean, World Inequality Lab, PSE (2023–present).</li>
+            <li>Teaching and Research Fellow (ATER), Centre d’Économie de la Sorbonne, Université Paris 1 (2022–2023).</li>
+          </ul>
+
+          <h4>Education</h4>
+          <ul>
+            <li>PhD in Economics, Paris School of Economics & Université Paris 1 (2024).</li>
+            <li>Master in Economics (APE), Paris School of Economics & EHESS (2018).</li>
+            <li>Bachelor’s degrees in Economics and Sociology, University of Costa Rica.</li>
+            <li>International Baccalaureate Diploma, Li Po Chun United World College of Hong Kong.</li>
+          </ul>
+
+          <h4>Recent Grants (Selected)</h4>
+          <ul>
+            <li>World Inequality Lab Mini-Grant (x2), 2025.</li>
+            <li>FNRS Mobility & Congress Funding, 2024–2025.</li>
+            <li>ADRES Grant Program, 2024.</li>
+            <li>PGSE Research Grants (ANR), 2019–2022.</li>
+          </ul>
+
+          <h4>Languages & Skills</h4>
+          <ul>
+            <li>Languages: Spanish (native), English & French (fluent); basic Arabic, German & Mandarin.</li>
+            <li>Software: Stata, R, Matlab, Python, EViews, SPSS, SAS, QGIS, VBA.</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <!-- Contact section -->
+    <!-- CONTACT -->
     <section id="contact">
       <h3>Contact</h3>
       <p>
-        The best way to reach me is by email: 
-        <a href="mailto:you@example.com">you@example.com</a>.
+        The best way to reach me is by email:
+        <a href="mailto:alvaro.zunigacordero@unamur.be">alvaro.zunigacordero@unamur.be</a>.
       </p>
       <p>
-        You can also find me on:
+        You can also find my work on:
       </p>
       <ul>
         <li><a href="https://scholar.google.com" target="_blank" rel="noopener">Google Scholar</a></li>
@@ -291,12 +767,56 @@
   </main>
 
   <footer>
-    © YOUR NAME – <span id="year"></span>
+    © Álvaro Zúñiga-Cordero – <span id="year"></span>
   </footer>
 
+  <button class="back-to-top" id="backToTop">↑ Top</button>
+
   <script>
-    // Simple script to always show the current year in the footer
+    // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Research tabs
+    const tabButtons = document.querySelectorAll(".tab-button");
+    const tabContents = document.querySelectorAll(".tab-content");
+
+    tabButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const targetId = button.getAttribute("data-tab");
+
+        tabButtons.forEach(btn => btn.classList.remove("active"));
+        tabContents.forEach(tab => tab.classList.remove("active"));
+
+        button.classList.add("active");
+        document.getElementById(targetId).classList.add("active");
+      });
+    });
+
+    // Collapsible CV overview
+    const cvCollapsible = document.getElementById("cv-collapsible");
+    const cvHeader = cvCollapsible.querySelector(".collapsible-header");
+    const cvBody = cvCollapsible.querySelector(".collapsible-body");
+    const cvIcon = cvCollapsible.querySelector(".collapsible-icon");
+
+    cvHeader.addEventListener("click", () => {
+      const isOpen = cvBody.classList.contains("open");
+      cvBody.classList.toggle("open", !isOpen);
+      cvIcon.classList.toggle("open", !isOpen);
+      cvHeader.querySelector("span").textContent = isOpen ? "Show CV overview" : "Hide CV overview";
+    });
+
+    // Back to top button
+    const backToTop = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        backToTop.style.display = "block";
+      } else {
+        backToTop.style.display = "none";
+      }
+    });
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
   </script>
 </body>
 </html>
