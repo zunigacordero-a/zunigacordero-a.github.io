@@ -5,26 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Álvaro Zúñiga-Cordero – Academic Website</title>
   <style>
-    
-      .social-icons {
+    /* ---------- Social icons ---------- */
+    .social-icons {
       margin-top: 0.9rem;
       display: flex;
       gap: 0.85rem;
       justify-content: center;
     }
-    
+
     .social-icons a svg {
       width: 26px;
       height: 26px;
       color: #444;
       transition: color 0.2s, transform 0.15s;
     }
-    
+
     .social-icons a:hover svg {
       color: #0044cc;
       transform: translateY(-2px);
     }
-      
+
     /* ---------- Base & Reset ---------- */
     * {
       box-sizing: border-box;
@@ -38,7 +38,7 @@
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.62;
+      line-height: 1.7;
       background-color: #fafafa;
       color: #222;
     }
@@ -50,6 +50,16 @@
 
     a:hover {
       text-decoration: underline;
+    }
+
+    /* Global paragraph spacing */
+    p {
+      margin-bottom: 0.95rem;
+    }
+
+    /* Extra spacing for intro paragraphs */
+    .about-paragraph {
+      margin-bottom: 1.3rem;
     }
 
     /* ---------- Layout & Width ---------- */
@@ -99,14 +109,14 @@
     main {
       width: 95%;
       max-width: 1600px;
-      margin: 2rem auto 3rem auto;
+      margin: 2.5rem auto 4rem auto;
       padding: 0 0.6rem;
     }
 
     section {
-      margin-bottom: 2.6rem;
+      margin-bottom: 3.5rem;         /* more space between sections */
       background-color: #fff;
-      padding: 1.4rem 1.6rem;
+      padding: 1.8rem 2rem;          /* more internal padding */
       border-radius: 12px;
       border: 1px solid #e4e4e4;
       box-shadow: 0 3px 14px rgba(0, 0, 0, 0.04);
@@ -114,7 +124,7 @@
 
     section h3 {
       font-size: 1.4rem;
-      margin-bottom: 0.65rem;
+      margin-bottom: 1rem;           /* more space below section titles */
       border-bottom: 1px solid #e0e0e0;
       padding-bottom: 0.4rem;
     }
@@ -144,7 +154,7 @@
     .hero {
       display: grid;
       grid-template-columns: 240px 1fr;
-      gap: 2rem;
+      gap: 2.5rem;
       align-items: start;
     }
 
@@ -158,29 +168,29 @@
 
     .hero-text h1 {
       font-size: 2rem;
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.5rem;
     }
 
     .hero-text h2 {
       font-size: 1.07rem;
       font-weight: 400;
       color: #555;
-      margin-bottom: 0.9rem;
+      margin-bottom: 1rem;
     }
 
     .contact-info {
       font-size: 0.97rem;
-      margin-bottom: 0.8rem;
+      margin-bottom: 1.1rem;
     }
 
     .contact-info div {
-      margin-bottom: 0.15rem;
+      margin-bottom: 0.2rem;
     }
 
     .cv-link,
     .button-link {
       display: inline-block;
-      margin-top: 0.45rem;
+      margin-top: 0.7rem;
       padding: 0.47rem 0.85rem;
       font-size: 0.95rem;
       font-weight: 500;
@@ -201,48 +211,12 @@
     .tagline {
       font-size: 0.96rem;
       color: #555;
-      margin-top: 0.55rem;
+      margin-top: 0.6rem;
     }
 
-    /* ---------- Tabs ---------- */
-    .tabs {
-      margin-top: 0.8rem;
-    }
-
-    .tab-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-bottom: 1rem;
-    }
-
-    .tab-button {
-      padding: 0.45rem 0.9rem;
-      font-size: 0.96rem;
-      border-radius: 999px;
-      border: 1px solid #ccc;
-      background-color: #f5f5f5;
-      cursor: pointer;
-      transition: background-color 0.25s, border-color 0.25s;
-    }
-
-    .tab-button.active {
-      background-color: #0044cc;
-      color: #fff;
-      border-color: #0044cc;
-    }
-
-    .tab-content {
-      display: none;
-      animation: fadeIn 0.3s ease-out;
-    }
-
-    .tab-content.active {
-      display: block;
-    }
-
+    /* ---------- Research ---------- */
     .research-item {
-      margin-bottom: 1.3rem;
+      margin-bottom: 1.6rem;
     }
 
     .research-title {
@@ -261,17 +235,12 @@
       margin-top: 0.25rem;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    /* ---------- Working paper layout: abstract + image ---------- */
+    /* Working paper layout: abstract + image */
     .wp-layout {
       display: grid;
       grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.3fr);
-      gap: 1rem;
-      margin-top: 0.5rem;
+      gap: 1.2rem;
+      margin-top: 0.6rem;
       align-items: flex-start;
     }
 
@@ -284,7 +253,7 @@
       border-radius: 10px;
       border: 1px solid #e4e4e4;
       background-color: #fff;
-      padding: 0.5rem;
+      padding: 0.6rem;
       text-align: center;
       font-size: 0.85rem;
       color: #666;
@@ -294,15 +263,15 @@
       max-width: 100%;
       border-radius: 8px;
       display: block;
-      margin: 0 auto 0.35rem;
+      margin: 0 auto 0.4rem;
     }
 
-    /* ---------- Cards ---------- */
+    /* ---------- Vertical card lists (Databases, Outreach, Teaching) ---------- */
     .card-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1rem;
-      margin-top: 0.8rem;
+      display: flex;
+      flex-direction: column;   /* vertical stack */
+      gap: 1.3rem;
+      margin-top: 1rem;
     }
 
     .card {
@@ -315,7 +284,7 @@
 
     .card-title {
       font-weight: 600;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.35rem;
       font-size: 1rem;
     }
 
@@ -331,7 +300,7 @@
 
     /* ---------- Collapsible CV ---------- */
     .collapsible {
-      margin-top: 0.7rem;
+      margin-top: 1rem;
       border-radius: 10px;
       border: 1px solid #dcdcdc;
       background-color: #fff;
@@ -431,274 +400,273 @@
 
   <main>
     <!-- ABOUT -->
-  <section id="about">
-    <div class="hero">
-  
-      <!-- LEFT COLUMN — PHOTO + ICONS -->
-      <div style="text-align:center;">
-        <img src="PSE_a.zunigo-cordero-41.jpg" alt="Portrait of Álvaro Zúñiga-Cordero" class="profile-photo" />
-  
-        <!-- Social media icons under the photo -->
-        <div class="social-icons" style="margin-top:1rem;">
-          
-          <!-- X / Twitter -->
-          <a href="https://x.com/YOUR_HANDLE" target="_blank" aria-label="X / Twitter">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18.244 2h3.308l-7.227 8.26L22 22h-6.845l-4.46-6.486L5.163 22H1.857l7.73-8.835L2 2h6.97l4.028 5.82L18.244 2z"/>
-            </svg>
-          </a>
-  
-          <!-- Bluesky -->
-          <a href="https://bsky.app/profile/YOUR_HANDLE" target="_blank" aria-label="Bluesky">
-            <svg viewBox="0 0 600 600" fill="currentColor">
-              <path d="M300 358.3c-27-53.8-73.5-108.1-150-158.3 48.3 89.2 21.1 131.9-29.2 152.8-7.2 3-14.5 5.6-21.8 7.8 28.5 13.4 57.1 13.2 86 3.9 41.2-13.4 83.5-41.3 115-94.7 31.5 53.4 73.8 81.3 115 94.7 28.9 9.3 57.5 9.5 86-3.9-7.3-2.2-14.6-4.8-21.8-7.8-50.3-20.9-77.5-63.6-29.2-152.8-76.5 50.2-123 104.5-150 158.3z"/>
-            </svg>
-          </a>
-  
-          <!-- LinkedIn -->
-          <a href="https://www.linkedin.com/in/YOUR_HANDLE" target="_blank" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.23 8.98H4.7v14.5H.23V8.98zM8.11 8.98h4.3v1.98h.06c.6-1.14 2.07-2.34 4.26-2.34 4.56 0 5.4 3 5.4 6.9v8H17.6v-7.1c0-1.68-.03-3.84-2.34-3.84-2.34 0-2.7 1.83-2.7 3.72v7.22H8.11V8.98z"/>
-            </svg>
-          </a>
-  
-          <!-- Google Scholar -->
-          <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" aria-label="Google Scholar">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2L1 9l11 7 9-5.73V17h2V9L12 2zm0 9.27L5.74 9 12 5.73 18.26 9 12 11.27zM4 13v2c0 2.76 3.58 5 8 5s8-2.24 8-5v-2l-8 4.73L4 13z"/>
-            </svg>
-          </a>
-  
-          <!-- ORCID -->
-          <a href="https://orcid.org/YOUR_ID" target="_blank" aria-label="ORCID">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0a12 12 0 1 0 12 12A12 12 0 0 0 12 0Zm-.15 5.44h1.7v13.12h-1.7Zm-.18 2.06a2.2 2.2 0 1 0-2.2 2.2 2.2 2.2 0 0 0 2.2-2.2Z"/>
-            </svg>
-          </a>
-  
+    <section id="about">
+      <div class="hero">
+
+        <!-- LEFT COLUMN — PHOTO + ICONS -->
+        <div style="text-align:center;">
+          <img src="PSE_a.zunigo-cordero-41.jpg" alt="Portrait of Álvaro Zúñiga-Cordero" class="profile-photo" />
+
+          <!-- Social media icons under the photo -->
+          <div class="social-icons">
+            <!-- X / Twitter -->
+            <a href="https://x.com/YOUR_HANDLE" target="_blank" aria-label="X / Twitter">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2h3.308l-7.227 8.26L22 22h-6.845l-4.46-6.486L5.163 22H1.857l7.73-8.835L2 2h6.97l4.028 5.82L18.244 2z"/>
+              </svg>
+            </a>
+
+            <!-- Bluesky -->
+            <a href="https://bsky.app/profile/YOUR_HANDLE" target="_blank" aria-label="Bluesky">
+              <svg viewBox="0 0 600 600" fill="currentColor">
+                <path d="M300 358.3c-27-53.8-73.5-108.1-150-158.3 48.3 89.2 21.1 131.9-29.2 152.8-7.2 3-14.5 5.6-21.8 7.8 28.5 13.4 57.1 13.2 86 3.9 41.2-13.4 83.5-41.3 115-94.7 31.5 53.4 73.8 81.3 115 94.7 28.9 9.3 57.5 9.5 86-3.9-7.3-2.2-14.6-4.8-21.8-7.8-50.3-20.9-77.5-63.6-29.2-152.8-76.5 50.2-123 104.5-150 158.3z"/>
+              </svg>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/YOUR_HANDLE" target="_blank" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.23 8.98H4.7v14.5H.23V8.98zM8.11 8.98h4.3v1.98h.06c.6-1.14 2.07-2.34 4.26-2.34 4.56 0 5.4 3 5.4 6.9v8H17.6v-7.1c0-1.68-.03-3.84-2.34-3.84-2.34 0-2.7 1.83-2.7 3.72v7.22H8.11V8.98z"/>
+              </svg>
+            </a>
+
+            <!-- Google Scholar -->
+            <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" aria-label="Google Scholar">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2L1 9l11 7 9-5.73V17h2V9L12 2zm0 9.27L5.74 9 12 5.73 18.26 9 12 11.27zM4 13v2c0 2.76 3.58 5 8 5s8-2.24 8-5v-2l-8 4.73L4 13z"/>
+              </svg>
+            </a>
+
+            <!-- ORCID -->
+            <a href="https://orcid.org/YOUR_ID" target="_blank" aria-label="ORCID">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0a12 12 0 1 0 12 12A12 12 0 0 0 12 0Zm-.15 5.44h1.7v13.12h-1.7Zm-.18 2.06a2.2 2.2 0 1 0-2.2 2.2 2.2 2.2 0 0 0 2.2-2.2Z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN — NAME + BIO -->
+        <div class="hero-text">
+          <h1>Álvaro Zúñiga-Cordero</h1>
+          <h2>Marie Skłodowska-Curie COFUND–C2W Postdoctoral Researcher</h2>
+
+          <div class="contact-info">
+            <div>Department of Economics, University of Namur</div>
+            <div>Namur, Belgium</div>
+            <div><a href="mailto:alvaro.zunigacordero@unamur.be">alvaro.zunigacordero [at] unamur.be</a></div>
+            <div><a href="mailto:a.zuniga-cordero@psemail.eu">a.zuniga-cordero [at] psemail.eu</a></div>
+          </div>
+
+          <p class="about-paragraph">
+            I am a Marie Skłodowska-Curie COFUND–C2W Postdoctoral Researcher at the University of Namur.
+            I earned my PhD in Economics from the Paris School of Economics in 2024, following the APE master’s
+            programme, and spent 2021–2022 as an exchange researcher at the London School of Economics and the
+            CEP.
+          </p>
+
+          <p class="about-paragraph">
+            My research studies how inequality, politics, trade, migration, and climate change shape one another.
+            I am currently examining how globalisation and inequality affect electoral outcomes, with new projects
+            on the political effects of extreme weather events and climate policies.
+          </p>
+
+          <p class="about-paragraph">
+            Before moving to France, I worked in financial markets and later in the Research Department of the
+            Central Bank of Costa Rica. I hold bachelor’s degrees in Economics and Sociology from the University
+            of Costa Rica, and an IB Diploma from Li Po Chun UWC of Hong Kong.
+          </p>
+
+          <p class="about-paragraph">
+            I have consulted for the World Bank and the United Nations ECLAC, I serve as Coordinator for Central
+            America and the Caribbean at the World Inequality Lab, and I am affiliated with the Programa Estado
+            de la Nación in Costa Rica.
+          </p>
+
+          <p class="tagline">
+            Research interests: economic inequality, political economy, trade, migration, applied econometrics.
+          </p>
+
+          <a class="cv-link" href="cv.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
         </div>
       </div>
-  
-      <!-- RIGHT COLUMN — NAME + BIO -->
-      <div class="hero-text">
-  
-        <h1>Álvaro Zúñiga-Cordero</h1>
-        <h2>Marie Skłodowska-Curie COFUND–C2W Postdoctoral Researcher</h2>
-  
-        <div class="contact-info">
-          <div>Department of Economics, University of Namur</div>
-          <div>Namur, Belgium</div>
-          <div><a href="mailto:alvaro.zunigacordero@unamur.be">alvaro.zunigacordero [at] unamur.be</a></div>
-          <div><a href="mailto:a.zuniga-cordero@psemail.eu">a.zuniga-cordero [at] psemail.eu</a></div>
-        </div>
-  
-        <p class="about-paragraph">
-          I am a Marie Skłodowska-Curie COFUND–C2W Postdoctoral Researcher at the University of Namur.
-          I earned my PhD in Economics from the Paris School of Economics in 2024, following the APE master’s
-          programme, and spent 2021–2022 as an exchange researcher at the London School of Economics and the
-          CEP.
-        </p>
-
-        <p class="about-paragraph">
-          My research studies how inequality, politics, trade, migration, and climate change shape one another.
-          I am currently examining how globalisation and inequality affect electoral outcomes, with new projects
-          on the political effects of extreme weather events and climate policies.
-        </p>
-  
-        <p class="about-paragraph">
-          Before moving to France, I worked in financial markets and later in the Research Department of the
-          Central Bank of Costa Rica. I hold bachelor’s degrees in Economics and Sociology from the University
-          of Costa Rica, and an IB Diploma from Li Po Chun UWC of Hong Kong.
-        </p>
-  
-        <p class="about-paragraph">
-          I have consulted for the World Bank and the United Nations ECLAC, I serve as Coordinator for Central
-          America and the Caribbean at the World Inequality Lab, and I am affiliated with the Programa Estado
-          de la Nación in Costa Rica.
-        </p>
-  
-        <p class="tagline">
-          Research interests: economic inequality, political economy, trade, migration, applied econometrics.
-        </p>
-
-         <a class="cv-link" href="cv.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
-        </div>
-  
-    </div>
-  </section>
-
+    </section>
 
     <!-- RESEARCH -->
-<section id="research">
-  <h3>Research</h3>
-  <p>
-    My work combines rich administrative, survey, and spatial data to study how inequality,
-    globalisation, and climate change influence political behaviour and long-run development.
-  </p>
+    <section id="research">
+      <h3>Research</h3>
+      <p>
+        My work combines rich administrative, survey, and spatial data to study how inequality,
+        globalisation, and climate change influence political behaviour and long-run development.
+      </p>
 
-  <!-- ————————————————————————————————
-       WORKING PAPERS (with Abstracts + Images)
-  ———————————————————————————————— -->
-  <h4 style="margin-top:1.8rem; font-size:1.25rem;">Working Papers</h4>
+      <!-- WORKING PAPERS -->
+      <h4 style="margin-top:1.8rem; font-size:1.25rem;">Working Papers</h4>
 
-  <!-- DINA paper -->
-  <div class="research-item">
-    <div class="research-title">
-      Distributional National Accounts Costa Rica: Inequality from the National to the Local Level (2000–2022)
-    </div>
-    <div class="research-meta">
-      Solo-authored working paper, ready to submit. (8 citations)
-    </div>
+      <!-- DINA paper -->
+      <div class="research-item">
+        <div class="research-title">
+          Distributional National Accounts Costa Rica: Inequality from the National to the Local Level (2000–2022)
+        </div>
+        <div class="research-meta">
+          Solo-authored working paper, ready to submit. (8 citations)
+        </div>
 
-    <div class="wp-layout">
-      <div class="wp-abstract">
-        <strong>Abstract.</strong>
-        This paper builds a set of Distributional National Accounts for Costa Rica by combining household
-        surveys, national accounts, social security records, tax data, and census information. It revises
-        standard inequality estimates, showing higher levels and sharper dynamics than official statistics,
-        particularly around the COVID-19 crisis. Local-level estimates reveal substantial spatial variation
-        and heterogeneous responses to structural shocks.
+        <div class="wp-layout">
+          <div class="wp-abstract">
+            <strong>Abstract.</strong>
+            This paper builds a set of Distributional National Accounts for Costa Rica by combining household
+            surveys, national accounts, social security records, tax data, and census information. It revises
+            standard inequality estimates, showing higher levels and sharper dynamics than official statistics,
+            particularly around the COVID-19 crisis. Local-level estimates reveal substantial spatial variation
+            and heterogeneous responses to structural shocks.
+          </div>
+
+          <div class="wp-image">
+            <img src="img/dina-costa-rica.png" alt="DINA Costa Rica illustration" />
+            <div>Replace with a figure from the paper.</div>
+          </div>
+        </div>
       </div>
 
-      <div class="wp-image">
-        <!-- Replace with your own graph/figure -->
-        <img src="img/dina-costa-rica.png" alt="DINA Costa Rica illustration" />
-        <div>Replace with a figure from the paper.</div>
-      </div>
-    </div>
-  </div>
+      <!-- Income shocks paper -->
+      <div class="research-item">
+        <div class="research-title">
+          Income Shocks, Economic Inequality, and Political Realignment:
+          Voter Turnout and the Shift to a Multi-Party System in Costa Rica
+        </div>
+        <div class="research-meta">
+          With Ronald Alfaro-Redondo. Job-market paper. (1 citation)
+        </div>
 
-  <!-- Income shocks paper -->
-  <div class="research-item">
-    <div class="research-title">
-      Income Shocks, Economic Inequality, and Political Realignment:
-      Voter Turnout and the Shift to a Multi-Party System in Costa Rica
-    </div>
-    <div class="research-meta">
-      With Ronald Alfaro-Redondo. Job-market paper. (1 citation)
-    </div>
+        <div class="wp-layout">
+          <div class="wp-abstract">
+            <strong>Abstract.</strong>
+            This paper combines individual electoral registries with employer–employee records to study how
+            income and inequality shape turnout and party support. Voter participation rises with income, but
+            the pattern depends on inequality: high-inequality areas mobilise voters at the extremes, while
+            more equal areas mobilise the middle. Downward income mobility increases turnout. Quasi-experimental
+            variation from mass layoffs and agricultural price shocks confirms these findings and helps explain
+            Costa Rica’s transition to a multi-party system.
+          </div>
 
-    <div class="wp-layout">
-      <div class="wp-abstract">
-        <strong>Abstract.</strong>
-        This paper combines individual electoral registries with employer–employee records to study how
-        income and inequality shape turnout and party support. Voter participation rises with income, but
-        the pattern depends on inequality: high-inequality areas mobilise voters at the extremes, while
-        more equal areas mobilise the middle. Downward income mobility increases turnout. Quasi-experimental
-        variation from mass layoffs and agricultural price shocks confirms these findings and helps explain
-        Costa Rica’s transition to a multi-party system.
-      </div>
-
-      <div class="wp-image">
-        <!-- Replace with your own graph/figure -->
-        <img src="img/income-shocks-turnout.png" alt="Income shocks and turnout illustration" />
-        <div>Replace with a figure from the paper.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Climate paper -->
-  <div class="research-item">
-    <div class="research-title">
-      Climate Change and Electoral Behaviour: Evidence from Extreme Weather Events in Costa Rica
-    </div>
-    <div class="research-meta">
-      With Lorenzo Trimarchi & Juan Robalino.
-    </div>
-
-    <div class="wp-layout">
-      <div class="wp-abstract">
-        <strong>Abstract.</strong>
-        Using high-resolution weather data, disaster inventories, and electoral microdata, this paper
-        examines how climate shocks shift political participation and vote shares. Exposure to extreme
-        weather increases political engagement, but partisan effects vary: progressive areas increase support
-        for green policies, while conservative regions show higher support for evangelical populist
-        alternatives, partly through the mobilisation of religious networks.
+          <div class="wp-image">
+            <img src="img/income-shocks-turnout.png" alt="Income shocks and turnout illustration" />
+            <div>Replace with a figure from the paper.</div>
+          </div>
+        </div>
       </div>
 
-      <div class="wp-image">
-        <!-- Replace with your own graph/figure -->
-        <img src="img/climate-elections.png" alt="Climate and electoral behaviour illustration" />
-        <div>Replace with a figure from the paper.</div>
+      <!-- Climate paper -->
+      <div class="research-item">
+        <div class="research-title">
+          Climate Change and Electoral Behaviour: Evidence from Extreme Weather Events in Costa Rica
+        </div>
+        <div class="research-meta">
+          With Lorenzo Trimarchi & Juan Robalino.
+        </div>
+
+        <div class="wp-layout">
+          <div class="wp-abstract">
+            <strong>Abstract.</strong>
+            Using high-resolution weather data, disaster inventories, and electoral microdata, this paper
+            examines how climate shocks shift political participation and vote shares. Exposure to extreme
+            weather increases political engagement, but partisan effects vary: progressive areas increase support
+            for green policies, while conservative regions show higher support for evangelical populist
+            alternatives, partly through the mobilisation of religious networks.
+          </div>
+
+          <div class="wp-image">
+            <img src="img/climate-elections.png" alt="Climate and electoral behaviour illustration" />
+            <div>Replace with a figure from the paper.</div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <!-- ————————————————————————————————
-       WORK IN PROGRESS
-  ———————————————————————————————— -->
-  <h4 style="margin-top:2.2rem; font-size:1.25rem;">Work in Progress</h4>
+      <!-- Latin America cleavages WP -->
+      <div class="research-item">
+        <div class="research-title">
+          Social Inequalities, Identity, and Political Cleavages in Latin America (1952–2019)
+        </div>
+        <div class="research-meta">
+          With Barrera, Leiva & Martínez-Toledano. WID.world Working Paper No. 2021/11.
+        </div>
+        <div class="research-note">
+          Long-run analysis of income, education, and party alignment in six Latin American countries using
+          harmonised survey and electoral data.
+        </div>
+      </div>
 
-  <div class="research-item">
-    <div class="research-title">
-      Airbnb Penetration, Housing Prices, and Distributional Impacts: Evidence from Italy since 2016
-    </div>
-    <div class="research-meta">
-      With Lorenzo Trimarchi & Giorgio Ferroni.
-    </div>
-    <div class="research-note">
-      Studies how short-term rentals affect housing markets and inequality across Italian cities.
-    </div>
-  </div>
+      <!-- WORK IN PROGRESS -->
+      <h4 style="margin-top:2.2rem; font-size:1.25rem;">Work in Progress</h4>
 
-  <div class="research-item">
-    <div class="research-title">
-      Changes in the Offer of Higher Education and Labour Market Outcomes
-    </div>
-    <div class="research-note">
-      Analyses how the expansion of regional university campuses shapes labour market opportunities
-      and the location decisions of multinational firms in Costa Rica.
-    </div>
-  </div>
+      <div class="research-item">
+        <div class="research-title">
+          Airbnb Penetration, Housing Prices, and Distributional Impacts: Evidence from Italy since 2016
+        </div>
+        <div class="research-meta">
+          With Lorenzo Trimarchi & Giorgio Ferroni.
+        </div>
+        <div class="research-note">
+          Studies how short-term rentals affect housing markets and inequality across Italian cities.
+        </div>
+      </div>
 
-  <div class="research-item">
-    <div class="research-title">
-      Wealth and Income Inequality in Central America and the Caribbean
-    </div>
-    <div class="research-meta">
-      With Ignacio Flores & Yajna Govind.
-    </div>
-  </div>
+      <div class="research-item">
+        <div class="research-title">
+          Changes in the Offer of Higher Education and Labour Market Outcomes
+        </div>
+        <div class="research-note">
+          Analyses how the expansion of regional university campuses shapes labour market opportunities
+          and the location decisions of multinational firms in Costa Rica.
+        </div>
+      </div>
 
-  <div class="research-item">
-    <div class="research-title">
-      Survey Evidence on Redistributive Preferences in the Americas
-    </div>
-    <div class="research-note">
-      Examines attitudes towards taxing top incomes and support for international transfers across countries.
-    </div>
-  </div>
+      <div class="research-item">
+        <div class="research-title">
+          Wealth and Income Inequality in Central America and the Caribbean
+        </div>
+        <div class="research-meta">
+          With Ignacio Flores & Yajna Govind.
+        </div>
+      </div>
 
-  <!-- ————————————————————————————————
-       BOOK CHAPTERS AND COLLABORATIONS
-  ———————————————————————————————— -->
-  <h4 style="margin-top:2.2rem; font-size:1.25rem;">Book Chapters and Collaborations</h4>
+      <div class="research-item">
+        <div class="research-title">
+          Survey Evidence on Redistributive Preferences in the Americas
+        </div>
+        <div class="research-note">
+          Examines attitudes towards taxing top incomes and support for international transfers across countries.
+        </div>
+      </div>
 
-  <div class="research-item">
-    <div class="research-title">
-      World Inequality Report 2022
-    </div>
-    <div class="research-meta">
-      World Inequality Lab, 2022.
-    </div>
-    <div class="research-note">
-      Contributor to the flagship report on global income and wealth inequality.
-    </div>
-  </div>
+      <!-- BOOK CHAPTERS AND COLLABORATIONS -->
+      <h4 style="margin-top:2.2rem; font-size:1.25rem;">Book Chapters and Collaborations</h4>
 
-  <div class="research-item">
-    <div class="research-title">
-      Social Inequalities, Identity, and the Structure of Political Cleavages in Argentina, Chile, Colombia,
-      Costa Rica, Mexico, and Peru, 1952–2019
-    </div>
-    <div class="research-meta">
-      Barrera, O., Leiva, A., Martínez-Toledano, C. & Zúñiga-Cordero, Á. (2021),
-      in <em>Political Cleavages and Social Inequalities: A Study of Fifty Democracies, 1948–2020</em>,
-      Harvard University Press.
-    </div>
-  </div>
-</section>
+      <div class="research-item">
+        <div class="research-title">
+          World Inequality Report 2022
+        </div>
+        <div class="research-meta">
+          World Inequality Lab, 2022.
+        </div>
+        <div class="research-note">
+          Contributor to the flagship report on global income and wealth inequality.
+        </div>
+      </div>
 
+      <div class="research-item">
+        <div class="research-title">
+          Social Inequalities, Identity, and the Structure of Political Cleavages in Argentina, Chile, Colombia,
+          Costa Rica, Mexico, and Peru, 1952–2019
+        </div>
+        <div class="research-meta">
+          Barrera, O., Leiva, A., Martínez-Toledano, C. & Zúñiga-Cordero, Á. (2021),
+          in <em>Political Cleavages and Social Inequalities: A Study of Fifty Democracies, 1948–2020</em>,
+          Harvard University Press.
+        </div>
+      </div>
+    </section>
 
     <!-- DATABASES -->
     <section id="databases">
@@ -826,7 +794,7 @@
             Introduction to Econometrics (Undergraduate)
           </div>
           <p>
-            Université Paris 1 Panthéon-Sorbonne, in French (2019–2020, 2022–2023), with Christian Doz & Tobias Broer.
+            Université Paris 1 Panthéon-Sorbonne, in French (2019–2020, 2022–2023), with Christian Doz &amp; Tobias Broer.
           </p>
         </div>
 
@@ -845,7 +813,7 @@
             Introduction to Economics (Undergraduate)
           </div>
           <p>
-            Université Paris 1 Panthéon-Sorbonne, in French (2018–2019), with N. Canry, O. Havrylchyk & A. Greulich.
+            Université Paris 1 Panthéon-Sorbonne, in French (2018–2019), with N. Canry, O. Havrylchyk &amp; A. Greulich.
           </p>
         </div>
       </div>
@@ -878,8 +846,8 @@
 
           <h4>Education</h4>
           <ul>
-            <li>PhD in Economics, Paris School of Economics & Université Paris 1 (2024).</li>
-            <li>Master in Economics (APE), Paris School of Economics & EHESS (2018).</li>
+            <li>PhD in Economics, Paris School of Economics &amp; Université Paris 1 (2024).</li>
+            <li>Master in Economics (APE), Paris School of Economics &amp; EHESS (2018).</li>
             <li>Bachelor’s degrees in Economics and Sociology, University of Costa Rica.</li>
             <li>International Baccalaureate Diploma, Li Po Chun United World College of Hong Kong.</li>
           </ul>
@@ -887,14 +855,14 @@
           <h4>Recent Grants (Selected)</h4>
           <ul>
             <li>World Inequality Lab Mini-Grant (x2), 2025.</li>
-            <li>FNRS Mobility & Congress Funding, 2024–2025.</li>
+            <li>FNRS Mobility &amp; Congress Funding, 2024–2025.</li>
             <li>ADRES Grant Program, 2024.</li>
             <li>PGSE Research Grants (ANR), 2019–2022.</li>
           </ul>
 
-          <h4>Languages & Skills</h4>
+          <h4>Languages &amp; Skills</h4>
           <ul>
-            <li>Languages: Spanish (native), English & French (fluent); basic Arabic, German & Mandarin.</li>
+            <li>Languages: Spanish (native), English &amp; French (fluent); basic Arabic, German &amp; Mandarin.</li>
             <li>Software: Stata, R, Matlab, Python, EViews, SPSS, SAS, QGIS, VBA.</li>
           </ul>
         </div>
@@ -929,22 +897,6 @@
     // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Research tabs
-    const tabButtons = document.querySelectorAll(".tab-button");
-    const tabContents = document.querySelectorAll(".tab-content");
-
-    tabButtons.forEach(button => {
-      button.addEventListener("click", () => {
-        const targetId = button.getAttribute("data-tab");
-
-        tabButtons.forEach(btn => btn.classList.remove("active"));
-        tabContents.forEach(tab => tab.classList.remove("active"));
-
-        button.classList.add("active");
-        document.getElementById(targetId).classList.add("active");
-      });
-    });
-
     // Collapsible CV overview
     const cvCollapsible = document.getElementById("cv-collapsible");
     const cvHeader = cvCollapsible.querySelector(".collapsible-header");
@@ -955,7 +907,8 @@
       const isOpen = cvBody.classList.contains("open");
       cvBody.classList.toggle("open", !isOpen);
       cvIcon.classList.toggle("open", !isOpen);
-      cvHeader.querySelector("span").textContent = isOpen ? "Show CV overview" : "Hide CV overview";
+      cvHeader.querySelector("span").textContent =
+        isOpen ? "Show CV overview" : "Hide CV overview";
     });
 
     // Back to top button
