@@ -769,7 +769,47 @@
       </div>
     </section>
 
+    /* --- Research abstract toggle --- */
+  .abstract-toggle {
+    margin-top: 0.6rem;
+    background: none;
+    border: 1px solid #d0d0d0;
+    border-radius: 999px;
+    padding: 0.35rem 0.8rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: #333;
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+  
+  .abstract-toggle:hover {
+    background-color: #f2f2f2;
+    border-color: #bdbdbd;
+  }
+  
+  .abstract-panel {
+    margin-top: 0.9rem;
+  }
+  
+  /* Make abstract paragraphs breathe a bit */
+  .wp-abstract p {
+    margin-bottom: 0.85rem;
+  }
+  
+  // Research: Show/Hide abstract toggles
+  document.querySelectorAll(".abstract-toggle").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const panelId = btn.getAttribute("aria-controls");
+      const panel = document.getElementById(panelId);
+      const isOpen = btn.getAttribute("aria-expanded") === "true";
+  
+      btn.setAttribute("aria-expanded", String(!isOpen));
+      btn.textContent = isOpen ? "Show abstract" : "Hide abstract";
+      panel.hidden = isOpen;
+    });
+  });
 
+    
     <!-- DATABASES -->
     <section id="databases">
       <h3>Databases</h3>
