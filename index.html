@@ -244,20 +244,21 @@
     }
 
     /* ---------- Research ---------- */
-    .research-item { margin-bottom: 1.6rem; }
-    .research-title { font-weight: 600; font-size: 1rem; }
-    .research-meta { font-size: 0.93rem; color: #555; }
-    .research-note { font-size: 0.92rem; color: #444; margin-top: 0.25rem; }
+    .research-item { margin-bottom: 1.9rem; }
+    .research-title { font-weight: 650; font-size: 1rem; }
+    .research-meta { font-size: 0.93rem; color: #555; margin-top: 0.2rem; }
+    .research-note { font-size: 0.92rem; color: #444; margin-top: 0.35rem; }
 
     .wp-layout {
       display: grid;
       grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.3fr);
       gap: 1.2rem;
-      margin-top: 0.6rem;
+      margin-top: 0.7rem;
       align-items: flex-start;
     }
 
-    .wp-abstract { font-size: 0.92rem; color: #333; }
+    .wp-abstract { font-size: 0.93rem; color: #333; }
+    .wp-abstract p { margin-bottom: 0.9rem; }
 
     .wp-image {
       border-radius: 8px;
@@ -449,7 +450,7 @@
               </svg>
             </a>
 
-            <!-- Google Scholar (replace YOUR_ID) -->
+            <!-- Google Scholar -->
             <a href="https://scholar.google.com/citations?user=YOUR_ID"
                class="icon-tooltip"
                data-tooltip="Google Scholar"
@@ -461,7 +462,7 @@
               </svg>
             </a>
 
-            <!-- ORCID (replace YOUR_ID) -->
+            <!-- ORCID -->
             <a href="https://orcid.org/YOUR_ID"
                class="icon-tooltip"
                data-tooltip="ORCID"
@@ -512,19 +513,16 @@
       </div>
     </section>
 
-    <!-- RESEARCH (unchanged content from your version) -->
-     <section id="research">
+    <!-- RESEARCH -->
+    <section id="research">
       <h3>Research</h3>
       <p>
         My work combines administrative, survey, and spatial data to study how inequality, globalisation,
         and climate change shape political behaviour and long-run development.
       </p>
-    
-      <!-- =======================================================
-           WORKING PAPERS
-      ======================================================== -->
+
       <h4 style="margin-top:1.8rem; font-size:1.25rem;">Working Papers</h4>
-    
+
       <!-- WP 1 -->
       <div class="research-item">
         <div class="research-title">
@@ -533,50 +531,39 @@
         <div class="research-meta">
           Solo-authored working paper, ready to submit. (8 citations)
         </div>
-    
-        <button class="abstract-toggle"
-                type="button"
-                aria-expanded="false"
-                aria-controls="abs-dina">
-          Show abstract
-        </button>
-    
-        <div id="abs-dina" class="abstract-panel" hidden>
-          <div class="wp-layout">
-            <div class="wp-abstract">
-              <strong>Abstract.</strong>
-              <p>
-                This paper constructs Distributional National Accounts (DINA) for Costa Rica, providing consistent
-                income distribution series that integrate household surveys, macroeconomic accounts, and administrative
-                records. The first objective is to correct official inequality estimates, which traditionally rely solely
-                on household surveys.
-              </p>
-    
-              <p>
-                Leveraging the high quality of available data, this study combines two complementary administrative
-                datasets: (1) social security microdata to adjust the incomes of wage earners and pensioners, and
-                (2) tax microdata to refine estimates for self-employed workers and capital income. The resulting series
-                show higher inequality than reflected in official figures for 2000–2022, with a marked deterioration in
-                2020, likely linked to the COVID-19 pandemic.
-              </p>
-    
-              <p>
-                The second objective is to generate revised inequality measures at the local level (county and district).
-                By integrating household surveys, census data, social security records, and electoral data, I produce
-                subnational inequality estimates that enable the analysis of spatial disparities and the impact of
-                structural shocks, such as the 2009 financial crisis and the COVID-19 pandemic. The findings uncover
-                substantial local-level variation that is otherwise obscured in national averages.
-              </p>
-            </div>
-    
-            <div class="wp-image">
-              <img src="img/dina-costa-rica.png" alt="DINA Costa Rica illustration" />
-              <div>Replace with a figure from the paper.</div>
-            </div>
+
+        <div class="wp-layout">
+          <div class="wp-abstract">
+            <strong>Abstract.</strong>
+            <p>
+              This paper constructs Distributional National Accounts (DINA) for Costa Rica, providing consistent income
+              distribution series that integrate household surveys, macroeconomic accounts, and administrative records.
+              The first objective is to correct official inequality estimates, which traditionally rely solely on
+              household surveys.
+            </p>
+            <p>
+              Leveraging the high quality of available data, this study combines two complementary administrative datasets:
+              (1) social security microdata to adjust the incomes of wage earners and pensioners, and (2) tax microdata to
+              refine estimates for self-employed workers and capital income. The resulting series show higher inequality
+              than reflected in official figures for 2000–2022, with a marked deterioration in 2020, likely linked to the
+              COVID-19 pandemic.
+            </p>
+            <p>
+              The second objective is to generate revised inequality measures at the local level (county and district).
+              By integrating household surveys, census data, social security records, and electoral data, I produce
+              subnational inequality estimates that enable the analysis of spatial disparities and the impact of structural
+              shocks, such as the 2009 financial crisis and the COVID-19 pandemic. The findings uncover substantial
+              local-level variation that is otherwise obscured in national averages.
+            </p>
+          </div>
+
+          <div class="wp-image">
+            <img src="img/dina-costa-rica.png" alt="DINA Costa Rica illustration" />
+            <div>Replace with a figure from the paper.</div>
           </div>
         </div>
       </div>
-    
+
       <!-- WP 2 -->
       <div class="research-item">
         <div class="research-title">
@@ -585,55 +572,43 @@
         <div class="research-meta">
           With Ronald Alfaro-Redondo. Job-market paper. (1 citation)
         </div>
-    
-        <button class="abstract-toggle"
-                type="button"
-                aria-expanded="false"
-                aria-controls="abs-income">
-          Show abstract
-        </button>
-    
-        <div id="abs-income" class="abstract-panel" hidden>
-          <div class="wp-layout">
-            <div class="wp-abstract">
-              <strong>Abstract.</strong>
-              <p>
-                This study uses Costa Rica to examine how income shocks and inequality affect declining voter turnout
-                and the rise of multi-party systems. Since 1998, Costa Rica has experienced a significant decrease in
-                electoral participation, providing a unique perspective to investigate socio-economic factors influencing
-                voter behaviour.
-              </p>
-    
-              <p>
-                By combining electoral registries with social security employer–employee records at the individual level,
-                this research delivers novel evidence from a developing democracy with a robust electoral tradition.
-                The findings indicate a positive relationship between income and voter turnout, significantly moderated
-                by inequality. High inequality increases electoral mobilisation among voters at income extremes, while
-                lower inequality enhances participation among middle-income groups.
-              </p>
-    
-              <p>
-                Individuals experiencing downward income mobility exhibit higher electoral engagement, suggesting
-                economic hardship motivates voter turnout in the short term. These conclusions are validated through
-                three identification strategies: random assignment of voters to polling stations within polling centres,
-                income loss from unexpected mass layoffs, and income variations linked to changes in international
-                agricultural prices.
-              </p>
-    
-              <p>
-                Income shocks have also reshaped electoral dynamics, especially affecting the historical PLN party,
-                which shifted its support from middle-income voters to the poorest and wealthiest segments.
-              </p>
-            </div>
-    
-            <div class="wp-image">
-              <img src="img/income-shocks-turnout.png" alt="Income shocks and turnout illustration" />
-              <div>Replace with a figure from the paper.</div>
-            </div>
+
+        <div class="wp-layout">
+          <div class="wp-abstract">
+            <strong>Abstract.</strong>
+            <p>
+              This study uses Costa Rica to examine how income shocks and inequality affect declining voter turnout and
+              the rise of multi-party systems. Since 1998, Costa Rica has experienced a significant decrease in electoral
+              participation, providing a unique perspective to investigate socio-economic factors influencing voter
+              behaviour.
+            </p>
+            <p>
+              By combining electoral registries with social security employer–employee records at the individual level,
+              this research delivers novel evidence from a developing democracy with a robust electoral tradition.
+              The findings indicate a positive relationship between income and voter turnout, significantly moderated by
+              inequality. High inequality increases electoral mobilisation among voters at income extremes, while lower
+              inequality enhances participation among middle-income groups.
+            </p>
+            <p>
+              Individuals experiencing downward income mobility exhibit higher electoral engagement, suggesting economic
+              hardship motivates voter turnout in the short term. These conclusions are validated through three
+              identification strategies: random assignment of voters to polling stations within polling centres, income
+              loss from unexpected mass layoffs, and income variations linked to changes in international agricultural
+              prices.
+            </p>
+            <p>
+              Income shocks have also reshaped electoral dynamics, especially affecting the historical PLN party, which
+              shifted its support from middle-income voters to the poorest and wealthiest segments.
+            </p>
+          </div>
+
+          <div class="wp-image">
+            <img src="img/income-shocks-turnout.png" alt="Income shocks and turnout illustration" />
+            <div>Replace with a figure from the paper.</div>
           </div>
         </div>
       </div>
-    
+
       <!-- WP 3 -->
       <div class="research-item">
         <div class="research-title">
@@ -642,51 +617,40 @@
         <div class="research-meta">
           With Lorenzo Trimarchi &amp; Juan Robalino.
         </div>
-    
-        <button class="abstract-toggle"
-                type="button"
-                aria-expanded="false"
-                aria-controls="abs-climate">
-          Show abstract
-        </button>
-    
-        <div id="abs-climate" class="abstract-panel" hidden>
-          <div class="wp-layout">
-            <div class="wp-abstract">
-              <strong>Abstract.</strong>
-              <p>
-                This paper examines the political implications of climate change by analysing how extreme weather events
-                affect electoral outcomes in Costa Rica. Leveraging rich administrative data—including electoral results,
-                individual-level turnout records, employer–employee information, disaster inventories, and geo-localised
-                weather registries—the study integrates high-resolution environmental and electoral data to address a
-                central question: How do extreme weather events affect voting behaviour?
-              </p>
-    
-              <p>
-                The analysis compares regions exposed to climate shocks over time using a difference-in-differences
-                framework with staggered treatment and event-study designs. Preliminary findings suggest that direct
-                experiences with climate change shape voter attitudes and participation, with responses varying by
-                socioeconomic status and political predispositions.
-              </p>
-    
-              <p>
-                In progressive-voting areas, extreme weather increases support for environmental policies, while in
-                conservative regions such events boost backing for evangelical populist alternatives. To explain this
-                divergence, the study examines the timing and spatial distribution of evangelical churches, showing that
-                extreme weather strengthens existing evangelical networks and mobilises electoral support for evangelical
-                populist candidates.
-              </p>
-            </div>
-    
-            <div class="wp-image">
-              <img src="img/climate-elections.png" alt="Climate and electoral behaviour illustration" />
-              <div>Replace with a figure from the paper.</div>
-            </div>
+
+        <div class="wp-layout">
+          <div class="wp-abstract">
+            <strong>Abstract.</strong>
+            <p>
+              This paper examines the political implications of climate change by analysing how extreme weather events
+              affect electoral outcomes in Costa Rica. Leveraging rich administrative data—including electoral results,
+              individual-level turnout records, employer–employee information, disaster inventories, and geo-localised
+              weather registries—the study integrates high-resolution environmental and electoral data to address a
+              central question: How do extreme weather events affect voting behaviour?
+            </p>
+            <p>
+              The analysis compares regions exposed to climate shocks over time using a difference-in-differences framework
+              with staggered treatment and event-study designs. Preliminary findings suggest that direct experiences with
+              climate change shape voter attitudes and participation, with responses varying by socioeconomic status and
+              political predispositions.
+            </p>
+            <p>
+              In progressive-voting areas, extreme weather increases support for environmental policies, while in
+              conservative regions such events boost backing for evangelical populist alternatives. To explain this
+              divergence, the study examines the timing and spatial distribution of evangelical churches, showing that
+              extreme weather strengthens existing evangelical networks and mobilises electoral support for evangelical
+              populist candidates.
+            </p>
+          </div>
+
+          <div class="wp-image">
+            <img src="img/climate-elections.png" alt="Climate and electoral behaviour illustration" />
+            <div>Replace with a figure from the paper.</div>
           </div>
         </div>
       </div>
-    
-      <!-- Additional WP (no abstract toggle here, but you can add one if you want) -->
+
+      <!-- Optional extra WP -->
       <div class="research-item" style="margin-top:1.2rem;">
         <div class="research-title">
           Social Inequalities, Identity, and Political Cleavages in Latin America (1952–2019)
@@ -698,13 +662,9 @@
           Long-run analysis of income, education, and party alignment in six Latin American countries using harmonised survey and electoral data.
         </div>
       </div>
-    
-    
-      <!-- =======================================================
-           WORK IN PROGRESS
-      ======================================================== -->
+
       <h4 style="margin-top:2.2rem; font-size:1.25rem;">Work in Progress</h4>
-    
+
       <div class="research-item">
         <div class="research-title">
           Airbnb Penetration, Housing Prices, and Distributional Impacts: Evidence from Italy since 2016
@@ -716,7 +676,7 @@
           Studies how short-term rentals affect housing markets and inequality across Italian cities.
         </div>
       </div>
-    
+
       <div class="research-item">
         <div class="research-title">
           Changes in the Offer of Higher Education and Labour Market Outcomes
@@ -725,7 +685,7 @@
           Analyses how the expansion of regional university campuses shapes labour market opportunities and the location decisions of multinational firms in Costa Rica.
         </div>
       </div>
-    
+
       <div class="research-item">
         <div class="research-title">
           Wealth and Income Inequality in Central America and the Caribbean
@@ -734,7 +694,7 @@
           With Ignacio Flores &amp; Yajna Govind.
         </div>
       </div>
-    
+
       <div class="research-item">
         <div class="research-title">
           Survey Evidence on Redistributive Preferences in the Americas
@@ -743,19 +703,17 @@
           Examines attitudes towards taxing top incomes and support for international transfers across countries.
         </div>
       </div>
-    
-    
-      <!-- =======================================================
-           BOOK CHAPTERS AND COLLABORATIONS
-      ======================================================== -->
+
       <h4 style="margin-top:2.2rem; font-size:1.25rem;">Book Chapters and Collaborations</h4>
-    
+
       <div class="research-item">
         <div class="research-title">World Inequality Report 2022</div>
         <div class="research-meta">World Inequality Lab, 2022.</div>
-        <div class="research-note">Contributor to the flagship report on global income and wealth inequality.</div>
+        <div class="research-note">
+          Contributor to the flagship report on global income and wealth inequality.
+        </div>
       </div>
-    
+
       <div class="research-item">
         <div class="research-title">
           Social Inequalities, Identity, and the Structure of Political Cleavages in Argentina, Chile, Colombia,
@@ -769,47 +727,6 @@
       </div>
     </section>
 
-    /* --- Research abstract toggle --- */
-  .abstract-toggle {
-    margin-top: 0.6rem;
-    background: none;
-    border: 1px solid #d0d0d0;
-    border-radius: 999px;
-    padding: 0.35rem 0.8rem;
-    font-size: 0.9rem;
-    cursor: pointer;
-    color: #333;
-    transition: background-color 0.2s, border-color 0.2s;
-  }
-  
-  .abstract-toggle:hover {
-    background-color: #f2f2f2;
-    border-color: #bdbdbd;
-  }
-  
-  .abstract-panel {
-    margin-top: 0.9rem;
-  }
-  
-  /* Make abstract paragraphs breathe a bit */
-  .wp-abstract p {
-    margin-bottom: 0.85rem;
-  }
-  
-  // Research: Show/Hide abstract toggles
-  document.querySelectorAll(".abstract-toggle").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const panelId = btn.getAttribute("aria-controls");
-      const panel = document.getElementById(panelId);
-      const isOpen = btn.getAttribute("aria-expanded") === "true";
-  
-      btn.setAttribute("aria-expanded", String(!isOpen));
-      btn.textContent = isOpen ? "Show abstract" : "Hide abstract";
-      panel.hidden = isOpen;
-    });
-  });
-
-    
     <!-- DATABASES -->
     <section id="databases">
       <h3>Databases</h3>
@@ -990,10 +907,13 @@
   <button class="back-to-top" id="backToTop">↑ Top</button>
 
   <script>
-    // ---------- Footer year ----------
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // Footer year
+    (function () {
+      const yearEl = document.getElementById("year");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    })();
 
-    // ---------- Collapsible CV overview ----------
+    // Collapsible CV overview
     (function () {
       const cvCollapsible = document.getElementById("cv-collapsible");
       if (!cvCollapsible) return;
@@ -1001,16 +921,18 @@
       const cvHeader = cvCollapsible.querySelector(".collapsible-header");
       const cvBody = cvCollapsible.querySelector(".collapsible-body");
       const cvIcon = cvCollapsible.querySelector(".collapsible-icon");
+      if (!cvHeader || !cvBody || !cvIcon) return;
 
       cvHeader.addEventListener("click", () => {
         const isOpen = cvBody.classList.contains("open");
         cvBody.classList.toggle("open", !isOpen);
         cvIcon.classList.toggle("open", !isOpen);
-        cvHeader.querySelector("span").textContent = isOpen ? "Show CV overview" : "Hide CV overview";
+        const label = cvHeader.querySelector("span");
+        if (label) label.textContent = isOpen ? "Show CV overview" : "Hide CV overview";
       });
     })();
 
-    // ---------- Back to top button ----------
+    // Back to top button
     (function () {
       const backToTop = document.getElementById("backToTop");
       if (!backToTop) return;
@@ -1024,7 +946,7 @@
       });
     })();
 
-    // ---------- Email icon: left click opens mailto, right click copies ----------
+    // Email icon: left click opens mailto, right click copies
     (function () {
       const emailIcons = document.querySelectorAll(".email-icon");
       if (!emailIcons.length) return;
@@ -1042,7 +964,6 @@
       }
 
       async function copyToClipboard(text) {
-        // Clipboard API works best on HTTPS. GitHub Pages is HTTPS.
         if (navigator.clipboard && window.isSecureContext) {
           await navigator.clipboard.writeText(text);
         } else {
@@ -1054,7 +975,6 @@
         const original = el.getAttribute("data-tooltip") || "";
         el.setAttribute("data-tooltip", "Copied!");
         el.classList.add("force-show");
-
         setTimeout(() => {
           el.setAttribute("data-tooltip", original);
           el.classList.remove("force-show");
@@ -1062,7 +982,6 @@
       }
 
       emailIcons.forEach(el => {
-        // Prevent context menu & copy on right click
         el.addEventListener("contextmenu", async (e) => {
           e.preventDefault();
           e.stopPropagation();
@@ -1073,15 +992,11 @@
           try {
             await copyToClipboard(email);
             showCopiedTooltip(el);
-          } catch (_) {
-            // If copying fails, do nothing (mailto still works on left click)
-          }
+          } catch (_) {}
         });
 
-        // Extra safety: if some browsers don’t trigger clipboard on contextmenu,
-        // also handle right mouse down.
         el.addEventListener("mousedown", async (e) => {
-          if (e.button !== 2) return; // right click only
+          if (e.button !== 2) return;
           e.preventDefault();
           e.stopPropagation();
 
