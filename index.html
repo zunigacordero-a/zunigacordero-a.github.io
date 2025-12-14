@@ -60,7 +60,7 @@
     /* Extra spacing for intro paragraphs */
     .about-paragraph {
       margin-bottom: 1.3rem;
-      line-height: 1.72;
+      line-height: 1.75;
     }
 
     /* ---------- Layout & Width ---------- */
@@ -114,20 +114,25 @@
       padding: 0 0.6rem;
     }
 
+    /* Sections: no boxes, just spacing and lines between them */
     section {
-      margin-bottom: 3.5rem;         /* more space between sections */
-      background-color: #fff;
-      padding: 1.8rem 2rem;          /* more internal padding */
-      border-radius: 12px;
-      border: 1px solid #e4e4e4;
-      box-shadow: 0 3px 14px rgba(0, 0, 0, 0.04);
+      margin: 0 0 3rem 0;
+      padding: 0 0 0.5rem 0;
+      background: none;
+      border: none;
+      box-shadow: none;
+    }
+
+    section + section {
+      border-top: 1px solid #ddd;   /* horizontal line between sections */
+      padding-top: 3rem;
     }
 
     section h3 {
       font-size: 1.4rem;
-      margin-bottom: 1rem;           /* more space below section titles */
-      border-bottom: 1px solid #e0e0e0;
+      margin-bottom: 1rem;
       padding-bottom: 0.4rem;
+      border-bottom: 1px solid #e0e0e0;
     }
 
     ul {
@@ -149,6 +154,8 @@
       font-size: 0.86rem;
       color: #666;
       padding: 1.9rem 0 2.8rem;
+      border-top: 1px solid #ddd;
+      margin-top: 2rem;
     }
 
     /* ---------- Hero ---------- */
@@ -169,44 +176,7 @@
 
     .hero-text h1 {
       font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .hero-text h2 {
-      font-size: 1.07rem;
-      font-weight: 400;
-      color: #555;
-      margin-bottom: 1rem;
-    }
-
-    .contact-info {
-      font-size: 0.97rem;
-      margin-bottom: 1.1rem;
-    }
-
-    .contact-info div {
-      margin-bottom: 0.2rem;
-    }
-
-    .cv-link,
-    .button-link {
-      display: inline-block;
-      margin-top: 0.7rem;
-      padding: 0.47rem 0.85rem;
-      font-size: 0.95rem;
-      font-weight: 500;
-      border-radius: 999px;
-      border: 1px solid #0044cc;
-      color: #0044cc;
-      background-color: #f7f9ff;
-      text-decoration: none;
-      transition: background-color 0.25s, color 0.25s;
-    }
-
-    .cv-link:hover,
-    .button-link:hover {
-      background-color: #0044cc;
-      color: #fff;
+      margin-bottom: 0.7rem;
     }
 
     .tagline {
@@ -251,7 +221,7 @@
     }
 
     .wp-image {
-      border-radius: 10px;
+      border-radius: 8px;
       border: 1px solid #e4e4e4;
       background-color: #fff;
       padding: 0.6rem;
@@ -262,7 +232,7 @@
 
     .wp-image img {
       max-width: 100%;
-      border-radius: 8px;
+      border-radius: 6px;
       display: block;
       margin: 0 auto 0.4rem;
     }
@@ -276,11 +246,10 @@
     }
 
     .card {
-      border-radius: 12px;
-      border: 1px solid #e4e4e4;
-      padding: 1rem 1.15rem;
-      background-color: #fafafa;
-      font-size: 0.96rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid #e5e5e5;  /* horizontal separator only */
+      background: none;
+      border-radius: 0;
     }
 
     .card-title {
@@ -299,14 +268,12 @@
       margin-left: 0.4rem;
     }
 
-    /* ---------- Collapsible CV ---------- */
+    /* ---------- Collapsible CV (no box, just line) ---------- */
     .collapsible {
       margin-top: 1rem;
-      border-radius: 10px;
-      border: 1px solid #dcdcdc;
-      background-color: #fff;
-      padding: 0.9rem 1.1rem;
-      font-size: 0.96rem;
+      padding: 0;
+      background: none;
+      border: none;
     }
 
     .collapsible-header {
@@ -315,6 +282,8 @@
       justify-content: space-between;
       cursor: pointer;
       user-select: none;
+      padding: 0.3rem 0;
+      border-bottom: 1px solid #ddd;
     }
 
     .collapsible-header span {
@@ -322,12 +291,12 @@
     }
 
     .collapsible-icon {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       transition: transform 0.25s;
     }
 
     .collapsible-body {
-      margin-top: 0.7rem;
+      margin-top: 0.8rem;
       display: none;
     }
 
@@ -402,100 +371,97 @@
   <main>
     <!-- ABOUT -->
     <section id="about">
-    <div class="hero">
-  
-      <!-- LEFT COLUMN — PHOTO + AFFILIATION + ICONS -->
-      <div style="text-align:center;">
-  
-        <img src="PSE_a.zunigo-cordero-41.jpg" alt="Portrait of Álvaro Zúñiga-Cordero" class="profile-photo" />
-  
-        <!-- Position / Affiliation / Contact directly under the photo -->
-        <div style="margin-top:1.2rem; font-size:0.95rem; line-height:1.45; color:#444;">
-          <div><strong>Marie Skłodowska-Curie COFUND–C2W Postdoctoral Researcher</strong></div>
-          <div>Department of Economics, University of Namur</div>
-          <div>Namur, Belgium</div>
-          <div style="margin-top:0.4rem;">alvaro.zunigacordero [at] unamur.be</div>
-          <div>a.zuniga-cordero [at] psemail.eu</div>
+      <div class="hero">
+
+        <!-- LEFT COLUMN — PHOTO + AFFILIATION + ICONS -->
+        <div style="text-align:center;">
+          <img src="PSE_a.zunigo-cordero-41.jpg" alt="Portrait of Álvaro Zúñiga-Cordero" class="profile-photo" />
+
+          <!-- Position / Affiliation / Contact directly under the photo -->
+          <div style="margin-top:1.2rem; font-size:0.95rem; line-height:1.5; color:#444;">
+            <div><strong>Marie Skłodowska-Curie COFUND–C2W Postdoctoral Researcher</strong></div>
+            <div>Department of Economics, University of Namur</div>
+            <div>Namur, Belgium</div>
+            <div style="margin-top:0.4rem;">alvaro.zunigacordero [at] unamur.be</div>
+            <div>a.zuniga-cordero [at] psemail.eu</div>
+          </div>
+
+          <!-- Social media icons -->
+          <div class="social-icons">
+            <!-- X / Twitter -->
+            <a href="https://x.com/alvarozc" target="_blank" aria-label="X / Twitter">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2h3.308l-7.227 8.26L22 22h-6.845l-4.46-6.486L5.163 22H1.857l7.73-8.835L2 2h6.97l4.028 5.82L18.244 2z"/>
+              </svg>
+            </a>
+
+            <!-- Bluesky -->
+            <a href="https://bsky.app/profile/alvarozc.bsky.social" target="_blank" aria-label="Bluesky">
+              <svg viewBox="0 0 600 600" fill="currentColor">
+                <path d="M300 358.3c-27-53.8-73.5-108.1-150-158.3 48.3 89.2 21.1 131.9-29.2 152.8-7.2 3-14.5 5.6-21.8 7.8 28.5 13.4 57.1 13.2 86 3.9 41.2-13.4 83.5-41.3 115-94.7 31.5 53.4 73.8 81.3 115 94.7 28.9 9.3 57.5 9.5 86-3.9-7.3-2.2-14.6-4.8-21.8-7.8-50.3-20.9-77.5-63.6-29.2-152.8-76.5 50.2-123 104.5-150 158.3z"/>
+              </svg>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/alvaro-zuniga-cordero-ba327111a/" target="_blank" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.23 8.98H4.7v14.5H.23V8.98zM8.11 8.98h4.3v1.98h.06c.6-1.14 2.07-2.34 4.26-2.34 4.56 0 5.4 3 5.4 6.9v8H17.6v-7.1c0-1.68-.03-3.84-2.34-3.84-2.34 0-2.7 1.83-2.7 3.72v7.22H8.11V8.98z"/>
+              </svg>
+            </a>
+
+            <!-- Google Scholar (replace YOUR_ID when ready) -->
+            <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" aria-label="Google Scholar">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2L1 9l11 7 9-5.73V17h2V9L12 2zm0 9.27L5.74 9 12 5.73 18.26 9 12 11.27zM4 13v2c0 2.76 3.58 5 8 5s8-2.24 8-5v-2l-8 4.73L4 13z"/>
+              </svg>
+            </a>
+
+            <!-- ORCID (replace YOUR_ID when ready) -->
+            <a href="https://orcid.org/YOUR_ID" target="_blank" aria-label="ORCID">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0a12 12 0 1 0 12 12A12 12 0 0 0 12 0Zm-.15 5.44h1.7v13.12h-1.7Zm-.18 2.06a2.2 2.2 0 1 0-2.2 2.2 2.2 2.2 0 0 0 2.2-2.2Z"/>
+              </svg>
+            </a>
+          </div>
         </div>
-  
-        <!-- Social media icons -->
-        <div class="social-icons" style="margin-top:1rem;">
-  
-          <!-- X / Twitter -->
-          <a href="https://x.com/YOUR_HANDLE" target="_blank" aria-label="X / Twitter">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18.244 2h3.308l-7.227 8.26L22 22h-6.845l-4.46-6.486L5.163 22H1.857l7.73-8.835L2 2h6.97l4.028 5.82L18.244 2z"/>
-            </svg>
-          </a>
-  
-          <!-- Bluesky -->
-          <a href="https://bsky.app/profile/YOUR_HANDLE" target="_blank" aria-label="Bluesky">
-            <svg viewBox="0 0 600 600" fill="currentColor">
-              <path d="M300 358.3c-27-53.8-73.5-108.1-150-158.3 48.3 89.2 21.1 131.9-29.2 152.8-7.2 3-14.5 5.6-21.8 7.8 28.5 13.4 57.1 13.2 86 3.9 41.2-13.4 83.5-41.3 115-94.7 31.5 53.4 73.8 81.3 115 94.7 28.9 9.3 57.5 9.5 86-3.9-7.3-2.2-14.6-4.8-21.8-7.8-50.3-20.9-77.5-63.6-29.2-152.8-76.5 50.2-123 104.5-150 158.3z"/>
-            </svg>
-          </a>
-  
-          <!-- LinkedIn -->
-          <a href="https://www.linkedin.com/in/YOUR_HANDLE" target="_blank" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.23 8.98H4.7v14.5H.23V8.98zM8.11 8.98h4.3v1.98h.06c.6-1.14 2.07-2.34 4.26-2.34 4.56 0 5.4 3 5.4 6.9v8H17.6v-7.1c0-1.68-.03-3.84-2.34-3.84-2.34 0-2.7 1.83-2.7 3.72v7.22H8.11V8.98z"/>
-            </svg>
-          </a>
-  
-          <!-- Google Scholar -->
-          <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" aria-label="Google Scholar">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2L1 9l11 7 9-5.73V17h2V9L12 2zm0 9.27L5.74 9 12 5.73 18.26 9 12 11.27zM4 13v2c0 2.76 3.58 5 8 5s8-2.24 8-5v-2l-8 4.73L4 13z"/>
-            </svg>
-          </a>
-  
-          <!-- ORCID -->
-          <a href="https://orcid.org/YOUR_ID" target="_blank" aria-label="ORCID">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0a12 12 0 1 0 12 12A12 12 0 0 0 12 0Zm-.15 5.44h1.7v13.12h-1.7Zm-.18 2.06a2.2 2.2 0 1 0-2.2 2.2 2.2 2.2 0 0 0 2.2-2.2Z"/>
-            </svg>
-          </a>
-  
+
+        <!-- RIGHT COLUMN — NAME + INTRO TEXT -->
+        <div class="hero-text">
+          <h1>Álvaro Zúñiga-Cordero</h1>
+
+          <p class="about-paragraph">
+            I am a Marie Skłodowska-Curie COFUND–C2W Postdoctoral Researcher at the University of Namur.
+            I earned my PhD in Economics from the Paris School of Economics in 2024, following the APE master’s
+            programme, and spent 2021–2022 as an exchange researcher at the London School of Economics and the CEP.
+          </p>
+
+          <p class="about-paragraph">
+            My research studies how inequality, politics, trade, migration, and climate change shape one another.
+            I am currently examining how globalisation and inequality affect electoral outcomes, with new projects
+            on the political effects of extreme weather events and climate policies.
+          </p>
+
+          <p class="about-paragraph">
+            Before moving to France, I worked in financial markets and later in the Research Department of the
+            Central Bank of Costa Rica. I hold bachelor’s degrees in Economics and Sociology from the University
+            of Costa Rica, and an IB Diploma from Li Po Chun UWC of Hong Kong.
+          </p>
+
+          <p class="about-paragraph">
+            I have consulted for the World Bank and the United Nations ECLAC, I serve as Coordinator for Central
+            America and the Caribbean at the World Inequality Lab, and I am affiliated with the Programa Estado
+            de la Nación in Costa Rica.
+          </p>
+
+          <p class="tagline">
+            Research interests: economic inequality, political economy, trade, migration, applied econometrics.
+          </p>
+
+          <a class="cv-link" href="cv.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
         </div>
+
       </div>
-  
-      <!-- RIGHT COLUMN — NAME + INTRO TEXT -->
-      <div class="hero-text">
-        <h1>Álvaro Zúñiga-Cordero</h1>
-  
-        <p class="about-paragraph">
-          I am a Marie Skłodowska-Curie COFUND–C2W Postdoctoral Researcher at the University of Namur.
-          I earned my PhD in Economics from the Paris School of Economics in 2024, following the APE master’s
-          programme, and spent 2021–2022 as an exchange researcher at the London School of Economics and the CEP.
-        </p>
-  
-        <p class="about-paragraph">
-          My research studies how inequality, politics, trade, migration, and climate change shape one another.
-          I am currently examining how globalisation and inequality affect electoral outcomes, with new projects
-          on the political effects of extreme weather events and climate policies.
-        </p>
-  
-        <p class="about-paragraph">
-          Before moving to France, I worked in financial markets and later in the Research Department of the
-          Central Bank of Costa Rica. I hold bachelor’s degrees in Economics and Sociology from the University
-          of Costa Rica, and an IB Diploma from Li Po Chun UWC of Hong Kong.
-        </p>
-  
-        <p class="about-paragraph">
-          I have consulted for the World Bank and the United Nations ECLAC, I serve as Coordinator for Central
-          America and the Caribbean at the World Inequality Lab, and I am affiliated with the Programa Estado
-          de la Nación in Costa Rica.
-        </p>
-  
-        <p class="tagline">
-          Research interests: economic inequality, political economy, trade, migration, applied econometrics.
-        </p>
-  
-        <a class="cv-link" href="cv.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
-      </div>
-  
-    </div>
-  </section>
+    </section>
 
     <!-- RESEARCH -->
     <section id="research">
@@ -694,7 +660,7 @@
 
         <div class="card">
           <div class="card-title">
-            Electoral & Socioeconomic Microdata, Costa Rica
+            Electoral &amp; Socioeconomic Microdata, Costa Rica
           </div>
           <p>
             Individual-level voter turnout and registration linked to employer–employee records, local inequality
@@ -704,7 +670,7 @@
 
         <div class="card">
           <div class="card-title">
-            Climate & Extreme Weather Exposure Dataset, Costa Rica
+            Climate &amp; Extreme Weather Exposure Dataset, Costa Rica
           </div>
           <p>
             Geo-localised data on extreme weather events and disasters matched to population, economic activity,
@@ -714,7 +680,7 @@
 
         <div class="card">
           <div class="card-title">
-            Inequality & Political Cleavages in Latin America (1952–2019)
+            Inequality &amp; Political Cleavages in Latin America (1952–2019)
           </div>
           <p>
             Historical database on social inequalities, parties, and voting patterns in six Latin American countries,
@@ -735,7 +701,7 @@
       <div class="card-list">
         <div class="card">
           <div class="card-title">
-            World Inequality Lab & Programa Estado de la Nación
+            World Inequality Lab &amp; Programa Estado de la Nación
           </div>
           <p>
             Coordinator for Central America and the Caribbean at the World Inequality Lab, and affiliated researcher at
@@ -887,7 +853,7 @@
       <ul>
         <li><a href="https://scholar.google.com" target="_blank" rel="noopener">Google Scholar</a></li>
         <li><a href="https://orcid.org" target="_blank" rel="noopener">ORCID</a></li>
-        <li><a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.linkedin.com/in/alvaro-zuniga-cordero-ba327111a/" target="_blank" rel="noopener">LinkedIn</a></li>
       </ul>
     </section>
   </main>
