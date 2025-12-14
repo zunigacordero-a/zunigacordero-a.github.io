@@ -4,8 +4,173 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Álvaro Zúñiga-Cordero – Academic Website</title>
+
   <style>
-    /* ---------- Social/icons row ---------- */
+    /* ---------- Base & Reset ---------- */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.7;
+      background-color: #fafafa;
+      color: #222;
+    }
+
+    a { color: #0044cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    p { margin-bottom: 0.95rem; }
+    .about-paragraph { margin-bottom: 1.3rem; line-height: 1.75; }
+
+    /* ---------- Header / Nav ---------- */
+    header {
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 0.8rem 0;
+    }
+
+    .nav-container {
+      width: 95%;
+      max-width: 1600px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .site-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.1rem;
+      font-size: 1rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
+    }
+    nav a:hover { border-color: #0044cc; }
+
+    main {
+      width: 95%;
+      max-width: 1600px;
+      margin: 2.5rem auto 4rem auto;
+      padding: 0 0.6rem;
+    }
+
+    /* ---------- Sections: NO boxes ---------- */
+    section {
+      margin: 0 0 3rem 0;
+      padding: 0 0 0.5rem 0;
+      background: none;
+      border: none;
+      box-shadow: none;
+    }
+
+    section + section {
+      border-top: 1px solid #ddd;
+      padding-top: 3rem;
+    }
+
+    section h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    ul { padding-left: 1.2rem; margin-top: 0.4rem; }
+    li { margin-bottom: 0.45rem; }
+
+    footer {
+      text-align: center;
+      font-size: 0.86rem;
+      color: #666;
+      padding: 1.9rem 0 2.8rem;
+      border-top: 1px solid #ddd;
+      margin-top: 2rem;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .profile-photo {
+      width: 100%;
+      max-width: 240px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 1px solid #ddd;
+    }
+
+    .hero-text h1 {
+      font-size: 2rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .tagline {
+      font-size: 0.96rem;
+      color: #555;
+      margin-top: 0.6rem;
+    }
+
+    .cv-link,
+    .button-link {
+      display: inline-block;
+      margin-top: 0.7rem;
+      padding: 0.47rem 0.85rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      border-radius: 999px;
+      border: 1px solid #0044cc;
+      color: #0044cc;
+      background-color: #f7f9ff;
+      text-decoration: none;
+      transition: background-color 0.25s, color 0.25s;
+    }
+
+    .cv-link:hover,
+    .button-link:hover {
+      background-color: #0044cc;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* ---------- Location row under photo ---------- */
+    .location-row {
+      margin-top: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .location-row svg {
+      width: 18px;
+      height: 18px;
+      color: #444;
+    }
+
+    /* ---------- Icons + tooltips ---------- */
     .social-icons {
       margin-top: 0.9rem;
       display: flex;
@@ -26,7 +191,6 @@
       transform: translateY(-2px);
     }
 
-    /* Generic wrapper for tooltip icons */
     .icon-tooltip {
       position: relative;
       display: inline-flex;
@@ -72,205 +236,19 @@
       transform: translateX(-50%) translateY(0);
     }
 
-    /* ---------- Base & Reset ---------- */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.7;
-      background-color: #fafafa;
-      color: #222;
-    }
-
-    a {
-      color: #0044cc;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* Global paragraph spacing */
-    p {
-      margin-bottom: 0.95rem;
-    }
-
-    /* Extra spacing for intro paragraphs */
-    .about-paragraph {
-      margin-bottom: 1.3rem;
-      line-height: 1.75;
-    }
-
-    /* ---------- Layout & Width ---------- */
-    header {
-      background-color: #fff;
-      border-bottom: 1px solid #ddd;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      padding: 0.8rem 0;
-    }
-
-    .nav-container {
-      width: 95%;
-      max-width: 1600px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-    }
-
-    .site-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.1rem;
-      font-size: 1rem;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      padding-bottom: 2px;
-      border-bottom: 2px solid transparent;
-    }
-
-    nav a:hover {
-      border-color: #0044cc;
-    }
-
-    main {
-      width: 95%;
-      max-width: 1600px;
-      margin: 2.5rem auto 4rem auto;
-      padding: 0 0.6rem;
-    }
-
-    /* Sections: no boxes, just spacing and lines between them */
-    section {
-      margin: 0 0 3rem 0;
-      padding: 0 0 0.5rem 0;
-      background: none;
-      border: none;
-      box-shadow: none;
-    }
-
-    section + section {
-      border-top: 1px solid #ddd;   /* horizontal line between sections */
-      padding-top: 3rem;
-    }
-
-    section h3 {
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-      padding-bottom: 0.4rem;
-      border-bottom: 1px solid #e0e0e0;
-    }
-
-    ul {
-      padding-left: 1.2rem;
-      margin-top: 0.4rem;
-    }
-
-    li {
-      margin-bottom: 0.45rem;
-    }
-
-    .year {
-      font-weight: 600;
-      margin-right: 0.4rem;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.86rem;
-      color: #666;
-      padding: 1.9rem 0 2.8rem;
-      border-top: 1px solid #ddd;
-      margin-top: 2rem;
-    }
-
-    /* ---------- Hero ---------- */
-    .hero {
-      display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 2.5rem;
-      align-items: start;
-    }
-
-    .profile-photo {
-      width: 100%;
-      max-width: 240px;
-      border-radius: 12px;
-      object-fit: cover;
-      border: 1px solid #ddd;
-    }
-
-    .hero-text h1 {
-      font-size: 2rem;
-      margin-bottom: 0.7rem;
-    }
-
-    .tagline {
-      font-size: 0.96rem;
-      color: #555;
-      margin-top: 0.6rem;
-    }
-
-    /* Location row under photo */
-    .location-row {
-      margin-top: 0.6rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.4rem;
-      font-size: 0.9rem;
-      color: #555;
-    }
-
-    .location-row svg {
-      width: 18px;
-      height: 18px;
-      color: #444;
+    /* Force-show tooltip (for “Copied!” feedback even without hover) */
+    .icon-tooltip.force-show::after,
+    .icon-tooltip.force-show::before {
+      opacity: 1 !important;
+      transform: translateX(-50%) translateY(0) !important;
     }
 
     /* ---------- Research ---------- */
-    .research-item {
-      margin-bottom: 1.6rem;
-    }
+    .research-item { margin-bottom: 1.6rem; }
+    .research-title { font-weight: 600; font-size: 1rem; }
+    .research-meta { font-size: 0.93rem; color: #555; }
+    .research-note { font-size: 0.92rem; color: #444; margin-top: 0.25rem; }
 
-    .research-title {
-      font-weight: 600;
-      font-size: 1rem;
-    }
-
-    .research-meta {
-      font-size: 0.93rem;
-      color: #555;
-    }
-
-    .research-note {
-      font-size: 0.92rem;
-      color: #444;
-      margin-top: 0.25rem;
-    }
-
-    /* Working paper layout: abstract + image */
     .wp-layout {
       display: grid;
       grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.3fr);
@@ -279,10 +257,7 @@
       align-items: flex-start;
     }
 
-    .wp-abstract {
-      font-size: 0.92rem;
-      color: #333;
-    }
+    .wp-abstract { font-size: 0.92rem; color: #333; }
 
     .wp-image {
       border-radius: 8px;
@@ -301,7 +276,7 @@
       margin: 0 auto 0.4rem;
     }
 
-    /* ---------- Vertical card lists (Databases, Outreach, Teaching) ---------- */
+    /* ---------- Vertical lists for Databases/Outreach/Teaching ---------- */
     .card-list {
       display: flex;
       flex-direction: column;
@@ -313,14 +288,9 @@
       padding-bottom: 0.6rem;
       border-bottom: 1px solid #e5e5e5;
       background: none;
-      border-radius: 0;
     }
 
-    .card-title {
-      font-weight: 600;
-      margin-bottom: 0.35rem;
-      font-size: 1rem;
-    }
+    .card-title { font-weight: 600; margin-bottom: 0.35rem; font-size: 1rem; }
 
     .badge {
       display: inline-block;
@@ -350,27 +320,12 @@
       border-bottom: 1px solid #ddd;
     }
 
-    .collapsible-header span {
-      font-weight: 600;
-    }
+    .collapsible-header span { font-weight: 600; }
+    .collapsible-icon { font-size: 1.1rem; transition: transform 0.25s; }
 
-    .collapsible-icon {
-      font-size: 1.1rem;
-      transition: transform 0.25s;
-    }
-
-    .collapsible-body {
-      margin-top: 0.8rem;
-      display: none;
-    }
-
-    .collapsible-body.open {
-      display: block;
-    }
-
-    .collapsible-icon.open {
-      transform: rotate(90deg);
-    }
+    .collapsible-body { margin-top: 0.8rem; display: none; }
+    .collapsible-body.open { display: block; }
+    .collapsible-icon.open { transform: rotate(90deg); }
 
     /* ---------- Back to top ---------- */
     .back-to-top {
@@ -388,14 +343,10 @@
       z-index: 20;
     }
 
-    .back-to-top:hover {
-      background-color: #f0f0f0;
-    }
+    .back-to-top:hover { background-color: #f0f0f0; }
 
     @media (max-width: 900px) {
-      .wp-layout {
-        grid-template-columns: 1fr;
-      }
+      .wp-layout { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 840px) {
@@ -404,16 +355,12 @@
         justify-items: center;
         text-align: center;
       }
-      .hero-text {
-        text-align: left;
-        width: 100%;
-      }
-      nav ul {
-        justify-content: flex-start;
-      }
+      .hero-text { text-align: left; width: 100%; }
+      nav ul { justify-content: flex-start; }
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="nav-container">
@@ -437,18 +384,16 @@
     <section id="about">
       <div class="hero">
 
-        <!-- LEFT COLUMN — PHOTO + AFFILIATION + LOCATION + ICONS -->
+        <!-- LEFT COLUMN -->
         <div style="text-align:center;">
           <img src="PSE_a.zunigo-cordero-41.jpg" alt="Portrait of Álvaro Zúñiga-Cordero" class="profile-photo" />
 
-          <!-- Position / Affiliation under the photo -->
           <div style="margin-top:1.2rem; font-size:0.95rem; line-height:1.5; color:#444;">
             <div><strong>Marie Skłodowska-Curie COFUND–C2W Postdoctoral Researcher</strong></div>
             <div>Department of Economics, University of Namur</div>
           </div>
 
-          <!-- Location row -->
-          <div class="location-row">
+          <div class="location-row" aria-label="Location">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M12 2C8.7 2 6 4.7 6 8c0 4.3 4.5 9.4 5.5 10.5.3.3.7.3 1 0C13.5 17.4 18 12.3 18 8c0-3.3-2.7-6-6-6zm0 8.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 5.5 12 5.5s2.5 1.1 2.5 2.5S13.4 10.5 12 10.5z"/>
             </svg>
@@ -456,76 +401,81 @@
           </div>
 
           <div class="social-icons">
-        
-          <!-- Email (PSE): tooltip + copy-to-clipboard -->
-          <a href="mailto:a.zuniga-cordero@psemail.eu"
-             class="icon-tooltip"
-             data-tooltip="a.zuniga-cordero@psemail.eu"
-             data-copy-email="a.zuniga-cordero@psemail.eu"
-             aria-label="Email (PSE)">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm0 2v.01L12 13l8-6.99V6H4zm0 12h16V9l-8 7L4 9v9z"/>
-            </svg>
-          </a>
-        
-          <!-- X / Twitter -->
-          <a href="https://x.com/alvarozc"
-             class="icon-tooltip"
-             data-tooltip="@alvarozc on X"
-             target="_blank"
-             aria-label="X / Twitter">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18.244 2h3.308l-7.227 8.26L22 22h-6.845l-4.46-6.486L5.163 22H1.857l7.73-8.835L2 2h6.97l4.028 5.82L18.244 2z"/>
-            </svg>
-          </a>
-        
-          <!-- Bluesky -->
-          <a href="https://bsky.app/profile/alvarozc.bsky.social"
-             class="icon-tooltip"
-             data-tooltip="@alvarozc.bsky.social"
-             target="_blank"
-             aria-label="Bluesky">
-            <svg viewBox="0 0 600 600" fill="currentColor">
-              <path d="M300 358.3c-27-53.8-73.5-108.1-150-158.3 48.3 89.2 21.1 131.9-29.2 152.8-7.2 3-14.5 5.6-21.8 7.8 28.5 13.4 57.1 13.2 86 3.9 41.2-13.4 83.5-41.3 115-94.7 31.5 53.4 73.8 81.3 115 94.7 28.9 9.3 57.5 9.5 86-3.9-7.3-2.2-14.6-4.8-21.8-7.8-50.3-20.9-77.5-63.6-29.2-152.8-76.5 50.2-123 104.5-150 158.3z"/>
-            </svg>
-          </a>
-        
-          <!-- LinkedIn -->
-          <a href="https://www.linkedin.com/in/alvaro-zuniga-cordero-ba327111a/"
-             class="icon-tooltip"
-             data-tooltip="LinkedIn profile"
-             target="_blank"
-             aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.23 8.98H4.7v14.5H.23V8.98zM8.11 8.98h4.3v1.98h.06c.6-1.14 2.07-2.34 4.26-2.34 4.56 0 5.4 3 5.4 6.9v8H17.6v-7.1c0-1.68-.03-3.84-2.34-3.84-2.34 0-2.7 1.83-2.7 3.72v7.22H8.11V8.98z"/>
-            </svg>
-          </a>
-        
-          <!-- Google Scholar -->
-          <a href="https://scholar.google.com/citations?user=YOUR_ID"
-             class="icon-tooltip"
-             data-tooltip="Google Scholar"
-             target="_blank"
-             aria-label="Google Scholar">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2L1 9l11 7 9-5.73V17h2V9L12 2zm0 9.27L5.74 9 12 5.73 18.26 9 12 11.27zM4 13v2c0 2.76 3.58 5 8 5s8-2.24 8-5v-2l-8 4.73L4 13z"/>
-            </svg>
-          </a>
-        
-          <!-- ORCID -->
-          <a href="https://orcid.org/YOUR_ID"
-             class="icon-tooltip"
-             data-tooltip="ORCID profile"
-             target="_blank"
-             aria-label="ORCID">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0a12 12 0 1 0 12 12A12 12 0 0 0 12 0Zm-.15 5.44h1.7v13.12h-1.7Zm-.18 2.06a2.2 2.2 0 1 0-2.2 2.2 2.2 2.2 0 0 0 2.2-2.2Z"/>
-            </svg>
-          </a>
-        
+
+            <!-- EMAIL (PSE) — left click mailto, right click copy -->
+            <a href="mailto:a.zuniga-cordero@psemail.eu"
+               class="icon-tooltip email-icon"
+               data-email="a.zuniga-cordero@psemail.eu"
+               data-tooltip="a.zuniga-cordero@psemail.eu"
+               aria-label="Email (right-click to copy)">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm0 2v.01L12 13l8-6.99V6H4zm0 12h16V9l-8 7L4 9v9z"/>
+              </svg>
+            </a>
+
+            <!-- X -->
+            <a href="https://x.com/alvarozc"
+               class="icon-tooltip"
+               data-tooltip="@alvarozc on X"
+               target="_blank"
+               rel="noopener"
+               aria-label="X">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2h3.308l-7.227 8.26L22 22h-6.845l-4.46-6.486L5.163 22H1.857l7.73-8.835L2 2h6.97l4.028 5.82L18.244 2z"/>
+              </svg>
+            </a>
+
+            <!-- Bluesky -->
+            <a href="https://bsky.app/profile/alvarozc.bsky.social"
+               class="icon-tooltip"
+               data-tooltip="@alvarozc.bsky.social"
+               target="_blank"
+               rel="noopener"
+               aria-label="Bluesky">
+              <svg viewBox="0 0 600 600" fill="currentColor">
+                <path d="M300 358.3c-27-53.8-73.5-108.1-150-158.3 48.3 89.2 21.1 131.9-29.2 152.8-7.2 3-14.5 5.6-21.8 7.8 28.5 13.4 57.1 13.2 86 3.9 41.2-13.4 83.5-41.3 115-94.7 31.5 53.4 73.8 81.3 115 94.7 28.9 9.3 57.5 9.5 86-3.9-7.3-2.2-14.6-4.8-21.8-7.8-50.3-20.9-77.5-63.6-29.2-152.8-76.5 50.2-123 104.5-150 158.3z"/>
+              </svg>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/alvaro-zuniga-cordero-ba327111a/"
+               class="icon-tooltip"
+               data-tooltip="LinkedIn"
+               target="_blank"
+               rel="noopener"
+               aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.23 8.98H4.7v14.5H.23V8.98zM8.11 8.98h4.3v1.98h.06c.6-1.14 2.07-2.34 4.26-2.34 4.56 0 5.4 3 5.4 6.9v8H17.6v-7.1c0-1.68-.03-3.84-2.34-3.84-2.34 0-2.7 1.83-2.7 3.72v7.22H8.11V8.98z"/>
+              </svg>
+            </a>
+
+            <!-- Google Scholar (replace YOUR_ID) -->
+            <a href="https://scholar.google.com/citations?user=YOUR_ID"
+               class="icon-tooltip"
+               data-tooltip="Google Scholar"
+               target="_blank"
+               rel="noopener"
+               aria-label="Google Scholar">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2L1 9l11 7 9-5.73V17h2V9L12 2zm0 9.27L5.74 9 12 5.73 18.26 9 12 11.27zM4 13v2c0 2.76 3.58 5 8 5s8-2.24 8-5v-2l-8 4.73L4 13z"/>
+              </svg>
+            </a>
+
+            <!-- ORCID (replace YOUR_ID) -->
+            <a href="https://orcid.org/YOUR_ID"
+               class="icon-tooltip"
+               data-tooltip="ORCID"
+               target="_blank"
+               rel="noopener"
+               aria-label="ORCID">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0a12 12 0 1 0 12 12A12 12 0 0 0 12 0Zm-.15 5.44h1.7v13.12h-1.7Zm-.18 2.06a2.2 2.2 0 1 0-2.2 2.2 2.2 2.2 0 0 0 2.2-2.2Z"/>
+              </svg>
+            </a>
+          </div>
         </div>
 
-        <!-- RIGHT COLUMN — NAME + INTRO TEXT -->
+        <!-- RIGHT COLUMN -->
         <div class="hero-text">
           <h1>Álvaro Zúñiga-Cordero</h1>
 
@@ -559,11 +509,10 @@
 
           <a class="cv-link" href="cv.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
         </div>
-
       </div>
     </section>
 
-    <!-- RESEARCH -->
+    <!-- RESEARCH (unchanged content from your version) -->
     <section id="research">
       <h3>Research</h3>
       <p>
@@ -571,10 +520,8 @@
         globalisation, and climate change influence political behaviour and long-run development.
       </p>
 
-      <!-- WORKING PAPERS -->
       <h4 style="margin-top:1.8rem; font-size:1.25rem;">Working Papers</h4>
 
-      <!-- DINA paper -->
       <div class="research-item">
         <div class="research-title">
           Distributional National Accounts Costa Rica: Inequality from the National to the Local Level (2000–2022)
@@ -582,7 +529,6 @@
         <div class="research-meta">
           Solo-authored working paper, ready to submit. (8 citations)
         </div>
-
         <div class="wp-layout">
           <div class="wp-abstract">
             <strong>Abstract.</strong>
@@ -592,7 +538,6 @@
             particularly around the COVID-19 crisis. Local-level estimates reveal substantial spatial variation
             and heterogeneous responses to structural shocks.
           </div>
-
           <div class="wp-image">
             <img src="img/dina-costa-rica.png" alt="DINA Costa Rica illustration" />
             <div>Replace with a figure from the paper.</div>
@@ -600,7 +545,6 @@
         </div>
       </div>
 
-      <!-- Income shocks paper -->
       <div class="research-item">
         <div class="research-title">
           Income Shocks, Economic Inequality, and Political Realignment:
@@ -609,7 +553,6 @@
         <div class="research-meta">
           With Ronald Alfaro-Redondo. Job-market paper. (1 citation)
         </div>
-
         <div class="wp-layout">
           <div class="wp-abstract">
             <strong>Abstract.</strong>
@@ -620,7 +563,6 @@
             variation from mass layoffs and agricultural price shocks confirms these findings and helps explain
             Costa Rica’s transition to a multi-party system.
           </div>
-
           <div class="wp-image">
             <img src="img/income-shocks-turnout.png" alt="Income shocks and turnout illustration" />
             <div>Replace with a figure from the paper.</div>
@@ -628,15 +570,13 @@
         </div>
       </div>
 
-      <!-- Climate paper -->
       <div class="research-item">
         <div class="research-title">
           Climate Change and Electoral Behaviour: Evidence from Extreme Weather Events in Costa Rica
         </div>
         <div class="research-meta">
-          With Lorenzo Trimarchi & Juan Robalino.
+          With Lorenzo Trimarchi &amp; Juan Robalino.
         </div>
-
         <div class="wp-layout">
           <div class="wp-abstract">
             <strong>Abstract.</strong>
@@ -646,7 +586,6 @@
             for green policies, while conservative regions show higher support for evangelical populist
             alternatives, partly through the mobilisation of religious networks.
           </div>
-
           <div class="wp-image">
             <img src="img/climate-elections.png" alt="Climate and electoral behaviour illustration" />
             <div>Replace with a figure from the paper.</div>
@@ -654,13 +593,12 @@
         </div>
       </div>
 
-      <!-- Latin America cleavages WP -->
       <div class="research-item">
         <div class="research-title">
           Social Inequalities, Identity, and Political Cleavages in Latin America (1952–2019)
         </div>
         <div class="research-meta">
-          With Barrera, Leiva & Martínez-Toledano. WID.world Working Paper No. 2021/11.
+          With Barrera, Leiva &amp; Martínez-Toledano. WID.world Working Paper No. 2021/11.
         </div>
         <div class="research-note">
           Long-run analysis of income, education, and party alignment in six Latin American countries using
@@ -668,7 +606,6 @@
         </div>
       </div>
 
-      <!-- WORK IN PROGRESS -->
       <h4 style="margin-top:2.2rem; font-size:1.25rem;">Work in Progress</h4>
 
       <div class="research-item">
@@ -676,7 +613,7 @@
           Airbnb Penetration, Housing Prices, and Distributional Impacts: Evidence from Italy since 2016
         </div>
         <div class="research-meta">
-          With Lorenzo Trimarchi & Giorgio Ferroni.
+          With Lorenzo Trimarchi &amp; Giorgio Ferroni.
         </div>
         <div class="research-note">
           Studies how short-term rentals affect housing markets and inequality across Italian cities.
@@ -698,7 +635,7 @@
           Wealth and Income Inequality in Central America and the Caribbean
         </div>
         <div class="research-meta">
-          With Ignacio Flores & Yajna Govind.
+          With Ignacio Flores &amp; Yajna Govind.
         </div>
       </div>
 
@@ -711,19 +648,12 @@
         </div>
       </div>
 
-      <!-- BOOK CHAPTERS AND COLLABORATIONS -->
       <h4 style="margin-top:2.2rem; font-size:1.25rem;">Book Chapters and Collaborations</h4>
 
       <div class="research-item">
-        <div class="research-title">
-          World Inequality Report 2022
-        </div>
-        <div class="research-meta">
-          World Inequality Lab, 2022.
-        </div>
-        <div class="research-note">
-          Contributor to the flagship report on global income and wealth inequality.
-        </div>
+        <div class="research-title">World Inequality Report 2022</div>
+        <div class="research-meta">World Inequality Lab, 2022.</div>
+        <div class="research-note">Contributor to the flagship report on global income and wealth inequality.</div>
       </div>
 
       <div class="research-item">
@@ -732,7 +662,7 @@
           Costa Rica, Mexico, and Peru, 1952–2019
         </div>
         <div class="research-meta">
-          Barrera, O., Leiva, A., Martínez-Toledano, C. & Zúñiga-Cordero, Á. (2021),
+          Barrera, O., Leiva, A., Martínez-Toledano, C. &amp; Zúñiga-Cordero, Á. (2021),
           in <em>Political Cleavages and Social Inequalities: A Study of Fifty Democracies, 1948–2020</em>,
           Harvard University Press.
         </div>
@@ -749,9 +679,7 @@
 
       <div class="card-list">
         <div class="card">
-          <div class="card-title">
-            Distributional National Accounts for Costa Rica (2000–2022)
-          </div>
+          <div class="card-title">Distributional National Accounts for Costa Rica (2000–2022)</div>
           <p>
             Integrated microdata combining social security records, tax files, household surveys, census data,
             and national accounts to produce consistent national and subnational inequality measures.
@@ -759,9 +687,7 @@
         </div>
 
         <div class="card">
-          <div class="card-title">
-            Electoral &amp; Socioeconomic Microdata, Costa Rica
-          </div>
+          <div class="card-title">Electoral &amp; Socioeconomic Microdata, Costa Rica</div>
           <p>
             Individual-level voter turnout and registration linked to employer–employee records, local inequality
             indicators, and polling-station information for presidential and municipal elections.
@@ -769,9 +695,7 @@
         </div>
 
         <div class="card">
-          <div class="card-title">
-            Climate &amp; Extreme Weather Exposure Dataset, Costa Rica
-          </div>
+          <div class="card-title">Climate &amp; Extreme Weather Exposure Dataset, Costa Rica</div>
           <p>
             Geo-localised data on extreme weather events and disasters matched to population, economic activity,
             and electoral outcomes to study the political consequences of climate shocks.
@@ -779,9 +703,7 @@
         </div>
 
         <div class="card">
-          <div class="card-title">
-            Inequality &amp; Political Cleavages in Latin America (1952–2019)
-          </div>
+          <div class="card-title">Inequality &amp; Political Cleavages in Latin America (1952–2019)</div>
           <p>
             Historical database on social inequalities, parties, and voting patterns in six Latin American countries,
             developed as part of the World Inequality Lab and Harvard University Press volume.
@@ -792,7 +714,7 @@
 
     <!-- OUTREACH -->
     <section id="outreach">
-      <h3>Outreach & Public Engagement</h3>
+      <h3>Outreach &amp; Public Engagement</h3>
       <p>
         I collaborate regularly with policy institutions and contribute to public debates on inequality,
         democracy, and education in Latin America.
@@ -800,9 +722,7 @@
 
       <div class="card-list">
         <div class="card">
-          <div class="card-title">
-            World Inequality Lab &amp; Programa Estado de la Nación
-          </div>
+          <div class="card-title">World Inequality Lab &amp; Programa Estado de la Nación</div>
           <p>
             Coordinator for Central America and the Caribbean at the World Inequality Lab, and affiliated researcher at
             the Programa Estado de la Nación in Costa Rica, contributing to regional analyses of inequality
@@ -811,33 +731,24 @@
         </div>
 
         <div class="card">
-          <div class="card-title">
-            Media Coverage <span class="badge">El País</span>
-          </div>
+          <div class="card-title">Media Coverage <span class="badge">El País</span></div>
           <p>
-            Research on political cleavages and inequality in Latin America has been featured in
-            <em>El País</em> (Spain), including coverage of the political situations in Colombia and Chile.
+            Research on political cleavages and inequality in Latin America has been featured in <em>El País</em> (Spain).
           </p>
         </div>
 
         <div class="card">
-          <div class="card-title">
-            National Reports on Education and Democracy
-          </div>
+          <div class="card-title">National Reports on Education and Democracy</div>
           <p>
             Co-author of multiple chapters in the <em>Estado de la Nación</em> and <em>Estado de la Educación</em>
-            reports, focusing on higher education, inequality and social integration, and the state of democracy
-            in Costa Rica (2020–2023).
+            reports (2020–2023).
           </p>
         </div>
 
         <div class="card">
-          <div class="card-title">
-            International Policy Work
-          </div>
+          <div class="card-title">International Policy Work</div>
           <p>
-            Consultant for the World Bank (Development Research Group) and the United Nations ECLAC, working on
-            projects related to taxation, inequality, and social statistics.
+            Consultant for the World Bank (Development Research Group) and the United Nations ECLAC.
           </p>
         </div>
       </div>
@@ -852,45 +763,28 @@
 
       <div class="card-list">
         <div class="card">
-          <div class="card-title">
-            International Trade (Graduate) <span class="badge">PSE</span>
-          </div>
-          <p>
-            Paris School of Economics, in English (2022–2025), with Thierry Verdier and Matthieu Parenti.
-          </p>
+          <div class="card-title">International Trade (Graduate) <span class="badge">PSE</span></div>
+          <p>Paris School of Economics, in English (2022–2025), with Thierry Verdier and Matthieu Parenti.</p>
         </div>
 
         <div class="card">
-          <div class="card-title">
-            Introduction to Econometrics (Undergraduate)
-          </div>
-          <p>
-            Université Paris 1 Panthéon-Sorbonne, in French (2019–2020, 2022–2023), with Christian Doz &amp; Tobias Broer.
-          </p>
+          <div class="card-title">Introduction to Econometrics (Undergraduate)</div>
+          <p>Université Paris 1 Panthéon-Sorbonne, in French (2019–2020, 2022–2023).</p>
         </div>
 
         <div class="card">
-          <div class="card-title">
-            International Trade (Undergraduate)
-          </div>
-          <p>
-            Université Paris 1 Panthéon-Sorbonne, in English/French (2018–2023), with Lionel Fontagné,
-            Mathieu Bas, and Laure Marchal.
-          </p>
+          <div class="card-title">International Trade (Undergraduate)</div>
+          <p>Université Paris 1 Panthéon-Sorbonne (2018–2023).</p>
         </div>
 
         <div class="card">
-          <div class="card-title">
-            Introduction to Economics (Undergraduate)
-          </div>
-          <p>
-            Université Paris 1 Panthéon-Sorbonne, in French (2018–2019), with N. Canry, O. Havrylchyk &amp; A. Greulich.
-          </p>
+          <div class="card-title">Introduction to Economics (Undergraduate)</div>
+          <p>Université Paris 1 Panthéon-Sorbonne, in French (2018–2019).</p>
         </div>
       </div>
     </section>
 
-    <!-- CV SECTION -->
+    <!-- CV -->
     <section id="cv">
       <h3>Curriculum Vitae</h3>
       <p>
@@ -898,15 +792,14 @@
         For full details, please download the PDF.
       </p>
 
-      <a class="button-link" href="cv.pdf" target="_blank" rel="noopener">
-        Download full CV (PDF)
-      </a>
+      <a class="button-link" href="cv.pdf" target="_blank" rel="noopener">Download full CV (PDF)</a>
 
       <div class="collapsible" id="cv-collapsible">
         <div class="collapsible-header">
           <span>Show CV overview</span>
           <span class="collapsible-icon">▶</span>
         </div>
+
         <div class="collapsible-body">
           <h4>Academic Appointments</h4>
           <ul>
@@ -944,17 +837,8 @@
     <section id="contact">
       <h3>Contact</h3>
       <p>
-        The best way to reach me is by email:
-        <a href="mailto:alvaro.zunigacordero@unamur.be">alvaro.zunigacordero@unamur.be</a>.
+        Email: <a href="mailto:a.zuniga-cordero@psemail.eu">a.zuniga-cordero@psemail.eu</a>
       </p>
-      <p>
-        You can also find my work on:
-      </p>
-      <ul>
-        <li><a href="https://scholar.google.com" target="_blank" rel="noopener">Google Scholar</a></li>
-        <li><a href="https://orcid.org" target="_blank" rel="noopener">ORCID</a></li>
-        <li><a href="https://www.linkedin.com/in/alvaro-zuniga-cordero-ba327111a/" target="_blank" rel="noopener">LinkedIn</a></li>
-      </ul>
     </section>
   </main>
 
@@ -965,54 +849,111 @@
   <button class="back-to-top" id="backToTop">↑ Top</button>
 
   <script>
-    // Footer year
+    // ---------- Footer year ----------
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Collapsible CV overview
-    const cvCollapsible = document.getElementById("cv-collapsible");
-    const cvHeader = cvCollapsible.querySelector(".collapsible-header");
-    const cvBody = cvCollapsible.querySelector(".collapsible-body");
-    const cvIcon = cvCollapsible.querySelector(".collapsible-icon");
+    // ---------- Collapsible CV overview ----------
+    (function () {
+      const cvCollapsible = document.getElementById("cv-collapsible");
+      if (!cvCollapsible) return;
 
-    cvHeader.addEventListener("click", () => {
-      const isOpen = cvBody.classList.contains("open");
-      cvBody.classList.toggle("open", !isOpen);
-      cvIcon.classList.toggle("open", !isOpen);
-      cvHeader.querySelector("span").textContent =
-        isOpen ? "Show CV overview" : "Hide CV overview";
-    });
+      const cvHeader = cvCollapsible.querySelector(".collapsible-header");
+      const cvBody = cvCollapsible.querySelector(".collapsible-body");
+      const cvIcon = cvCollapsible.querySelector(".collapsible-icon");
 
-    // Copy-to-clipboard for email icons with tooltip feedback
-    const emailIcons = document.querySelectorAll("[data-copy-email]");
-    emailIcons.forEach(icon => {
-      icon.addEventListener("click", (e) => {
-        const email = icon.getAttribute("data-copy-email");
-        if (email && navigator.clipboard) {
-          navigator.clipboard.writeText(email).then(() => {
-            const originalTooltip = icon.getAttribute("data-tooltip");
-            icon.setAttribute("data-tooltip", "Copied!");
-            setTimeout(() => {
-              icon.setAttribute("data-tooltip", originalTooltip);
-            }, 1500);
-          }).catch(() => {
-            // If clipboard fails, just fall back to mailto behaviour
-          });
-        }
+      cvHeader.addEventListener("click", () => {
+        const isOpen = cvBody.classList.contains("open");
+        cvBody.classList.toggle("open", !isOpen);
+        cvIcon.classList.toggle("open", !isOpen);
+        cvHeader.querySelector("span").textContent = isOpen ? "Show CV overview" : "Hide CV overview";
       });
-    });
+    })();
 
-    // Back to top button
-    const backToTop = document.getElementById("backToTop");
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) {
-        backToTop.style.display = "block";
-      } else {
-        backToTop.style.display = "none";
+    // ---------- Back to top button ----------
+    (function () {
+      const backToTop = document.getElementById("backToTop");
+      if (!backToTop) return;
+
+      window.addEventListener("scroll", () => {
+        backToTop.style.display = window.scrollY > 300 ? "block" : "none";
+      });
+
+      backToTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    })();
+
+    // ---------- Email icon: left click opens mailto, right click copies ----------
+    (function () {
+      const emailIcons = document.querySelectorAll(".email-icon");
+      if (!emailIcons.length) return;
+
+      function fallbackCopy(text) {
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "fixed";
+        ta.style.top = "-1000px";
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand("copy"); } catch (_) {}
+        document.body.removeChild(ta);
       }
-    });
-    backToTop.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+
+      async function copyToClipboard(text) {
+        // Clipboard API works best on HTTPS. GitHub Pages is HTTPS.
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+        } else {
+          fallbackCopy(text);
+        }
+      }
+
+      function showCopiedTooltip(el) {
+        const original = el.getAttribute("data-tooltip") || "";
+        el.setAttribute("data-tooltip", "Copied!");
+        el.classList.add("force-show");
+
+        setTimeout(() => {
+          el.setAttribute("data-tooltip", original);
+          el.classList.remove("force-show");
+        }, 1200);
+      }
+
+      emailIcons.forEach(el => {
+        // Prevent context menu & copy on right click
+        el.addEventListener("contextmenu", async (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+
+          const email = el.getAttribute("data-email");
+          if (!email) return;
+
+          try {
+            await copyToClipboard(email);
+            showCopiedTooltip(el);
+          } catch (_) {
+            // If copying fails, do nothing (mailto still works on left click)
+          }
+        });
+
+        // Extra safety: if some browsers don’t trigger clipboard on contextmenu,
+        // also handle right mouse down.
+        el.addEventListener("mousedown", async (e) => {
+          if (e.button !== 2) return; // right click only
+          e.preventDefault();
+          e.stopPropagation();
+
+          const email = el.getAttribute("data-email");
+          if (!email) return;
+
+          try {
+            await copyToClipboard(email);
+            showCopiedTooltip(el);
+          } catch (_) {}
+        });
+      });
+    })();
   </script>
 </body>
 </html>
