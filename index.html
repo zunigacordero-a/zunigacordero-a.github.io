@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Álvaro Zúñiga-Cordero – Academic Website</title>
   <style>
-    /* ---------- Social icons ---------- */
+    /* ---------- Social/icons row ---------- */
     .social-icons {
       margin-top: 0.9rem;
       display: flex;
       gap: 0.85rem;
       justify-content: center;
+      flex-wrap: wrap;
     }
 
     .social-icons a svg {
@@ -23,6 +24,52 @@
     .social-icons a:hover svg {
       color: #0044cc;
       transform: translateY(-2px);
+    }
+
+    /* Generic wrapper for tooltip icons */
+    .icon-tooltip {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon-tooltip::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 140%;
+      left: 50%;
+      transform: translateX(-50%) translateY(4px);
+      background: #333;
+      color: #fff;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.15s, transform 0.15s;
+      z-index: 30;
+    }
+
+    .icon-tooltip::before {
+      content: "";
+      position: absolute;
+      bottom: 132%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 5px;
+      border-style: solid;
+      border-color: #333 transparent transparent transparent;
+      opacity: 0;
+      transition: opacity 0.15s;
+      z-index: 29;
+    }
+
+    .icon-tooltip:hover::after,
+    .icon-tooltip:hover::before {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
     }
 
     /* ---------- Base & Reset ---------- */
@@ -185,6 +232,23 @@
       margin-top: 0.6rem;
     }
 
+    /* Location row under photo */
+    .location-row {
+      margin-top: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .location-row svg {
+      width: 18px;
+      height: 18px;
+      color: #444;
+    }
+
     /* ---------- Research ---------- */
     .research-item {
       margin-bottom: 1.6rem;
@@ -240,14 +304,14 @@
     /* ---------- Vertical card lists (Databases, Outreach, Teaching) ---------- */
     .card-list {
       display: flex;
-      flex-direction: column;   /* vertical stack */
+      flex-direction: column;
       gap: 1.3rem;
       margin-top: 1rem;
     }
 
     .card {
       padding-bottom: 0.6rem;
-      border-bottom: 1px solid #e5e5e5;  /* horizontal separator only */
+      border-bottom: 1px solid #e5e5e5;
       background: none;
       border-radius: 0;
     }
@@ -268,7 +332,7 @@
       margin-left: 0.4rem;
     }
 
-    /* ---------- Collapsible CV (no box, just line) ---------- */
+    /* ---------- Collapsible CV ---------- */
     .collapsible {
       margin-top: 1rem;
       padding: 0;
@@ -373,51 +437,100 @@
     <section id="about">
       <div class="hero">
 
-        <!-- LEFT COLUMN — PHOTO + AFFILIATION + ICONS -->
+        <!-- LEFT COLUMN — PHOTO + AFFILIATION + LOCATION + ICONS -->
         <div style="text-align:center;">
           <img src="PSE_a.zunigo-cordero-41.jpg" alt="Portrait of Álvaro Zúñiga-Cordero" class="profile-photo" />
 
-          <!-- Position / Affiliation / Contact directly under the photo -->
+          <!-- Position / Affiliation under the photo -->
           <div style="margin-top:1.2rem; font-size:0.95rem; line-height:1.5; color:#444;">
             <div><strong>Marie Skłodowska-Curie COFUND–C2W Postdoctoral Researcher</strong></div>
             <div>Department of Economics, University of Namur</div>
-            <div>Namur, Belgium</div>
-            <div style="margin-top:0.4rem;">alvaro.zunigacordero [at] unamur.be</div>
-            <div>a.zuniga-cordero [at] psemail.eu</div>
           </div>
 
-          <!-- Social media icons -->
+          <!-- Location row -->
+          <div class="location-row">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2C8.7 2 6 4.7 6 8c0 4.3 4.5 9.4 5.5 10.5.3.3.7.3 1 0C13.5 17.4 18 12.3 18 8c0-3.3-2.7-6-6-6zm0 8.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 5.5 12 5.5s2.5 1.1 2.5 2.5S13.4 10.5 12 10.5z"/>
+            </svg>
+            <span>Namur, Belgium</span>
+          </div>
+
+          <!-- Icons: email + social -->
           <div class="social-icons">
+
+            <!-- Email UNamur: tooltip + copy-to-clipboard -->
+            <a href="mailto:alvaro.zunigacordero@unamur.be"
+               class="icon-tooltip"
+               data-tooltip="alvaro.zunigacordero@unamur.be"
+               data-copy-email="alvaro.zunigacordero@unamur.be"
+               aria-label="Email (UNamur)">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <!-- outlined mail icon -->
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm0 2v.01L12 13l8-6.99V6H4zm0 12h16V9l-8 7L4 9v9z"/>
+              </svg>
+            </a>
+
+            <!-- Email PSE: tooltip + copy-to-clipboard -->
+            <a href="mailto:a.zuniga-cordero@psemail.eu"
+               class="icon-tooltip"
+               data-tooltip="a.zuniga-cordero@psemail.eu"
+               data-copy-email="a.zuniga-cordero@psemail.eu"
+               aria-label="Email (PSE)">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm0 2v.01L12 13l8-6.99V6H4zm0 12h16V9l-8 7L4 9v9z"/>
+              </svg>
+            </a>
+
             <!-- X / Twitter -->
-            <a href="https://x.com/alvarozc" target="_blank" aria-label="X / Twitter">
+            <a href="https://x.com/alvarozc"
+               class="icon-tooltip"
+               data-tooltip="@alvarozc on X"
+               target="_blank"
+               aria-label="X / Twitter">
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <path d="M18.244 2h3.308l-7.227 8.26L22 22h-6.845l-4.46-6.486L5.163 22H1.857l7.73-8.835L2 2h6.97l4.028 5.82L18.244 2z"/>
               </svg>
             </a>
 
             <!-- Bluesky -->
-            <a href="https://bsky.app/profile/alvarozc.bsky.social" target="_blank" aria-label="Bluesky">
+            <a href="https://bsky.app/profile/alvarozc.bsky.social"
+               class="icon-tooltip"
+               data-tooltip="@alvarozc.bsky.social"
+               target="_blank"
+               aria-label="Bluesky">
               <svg viewBox="0 0 600 600" fill="currentColor">
                 <path d="M300 358.3c-27-53.8-73.5-108.1-150-158.3 48.3 89.2 21.1 131.9-29.2 152.8-7.2 3-14.5 5.6-21.8 7.8 28.5 13.4 57.1 13.2 86 3.9 41.2-13.4 83.5-41.3 115-94.7 31.5 53.4 73.8 81.3 115 94.7 28.9 9.3 57.5 9.5 86-3.9-7.3-2.2-14.6-4.8-21.8-7.8-50.3-20.9-77.5-63.6-29.2-152.8-76.5 50.2-123 104.5-150 158.3z"/>
               </svg>
             </a>
 
             <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/in/alvaro-zuniga-cordero-ba327111a/" target="_blank" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/alvaro-zuniga-cordero-ba327111a/"
+               class="icon-tooltip"
+               data-tooltip="LinkedIn profile"
+               target="_blank"
+               aria-label="LinkedIn">
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.23 8.98H4.7v14.5H.23V8.98zM8.11 8.98h4.3v1.98h.06c.6-1.14 2.07-2.34 4.26-2.34 4.56 0 5.4 3 5.4 6.9v8H17.6v-7.1c0-1.68-.03-3.84-2.34-3.84-2.34 0-2.7 1.83-2.7 3.72v7.22H8.11V8.98z"/>
               </svg>
             </a>
 
-            <!-- Google Scholar (replace YOUR_ID when ready) -->
-            <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" aria-label="Google Scholar">
+            <!-- Google Scholar (replace YOUR_ID when available) -->
+            <a href="https://scholar.google.com/citations?user=YOUR_ID"
+               class="icon-tooltip"
+               data-tooltip="Google Scholar"
+               target="_blank"
+               aria-label="Google Scholar">
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2L1 9l11 7 9-5.73V17h2V9L12 2zm0 9.27L5.74 9 12 5.73 18.26 9 12 11.27zM4 13v2c0 2.76 3.58 5 8 5s8-2.24 8-5v-2l-8 4.73L4 13z"/>
               </svg>
             </a>
 
-            <!-- ORCID (replace YOUR_ID when ready) -->
-            <a href="https://orcid.org/YOUR_ID" target="_blank" aria-label="ORCID">
+            <!-- ORCID (replace YOUR_ID when available) -->
+            <a href="https://orcid.org/YOUR_ID"
+               class="icon-tooltip"
+               data-tooltip="ORCID profile"
+               target="_blank"
+               aria-label="ORCID">
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 0a12 12 0 1 0 12 12A12 12 0 0 0 12 0Zm-.15 5.44h1.7v13.12h-1.7Zm-.18 2.06a2.2 2.2 0 1 0-2.2 2.2 2.2 2.2 0 0 0 2.2-2.2Z"/>
               </svg>
@@ -880,6 +993,25 @@
       cvIcon.classList.toggle("open", !isOpen);
       cvHeader.querySelector("span").textContent =
         isOpen ? "Show CV overview" : "Hide CV overview";
+    });
+
+    // Copy-to-clipboard for email icons with tooltip feedback
+    const emailIcons = document.querySelectorAll("[data-copy-email]");
+    emailIcons.forEach(icon => {
+      icon.addEventListener("click", (e) => {
+        const email = icon.getAttribute("data-copy-email");
+        if (email && navigator.clipboard) {
+          navigator.clipboard.writeText(email).then(() => {
+            const originalTooltip = icon.getAttribute("data-tooltip");
+            icon.setAttribute("data-tooltip", "Copied!");
+            setTimeout(() => {
+              icon.setAttribute("data-tooltip", originalTooltip);
+            }, 1500);
+          }).catch(() => {
+            // If clipboard fails, just fall back to mailto behaviour
+          });
+        }
+      });
     });
 
     // Back to top button
