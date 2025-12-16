@@ -1,3 +1,4 @@
+html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -277,7 +278,24 @@
       margin: 0 auto 0.4rem;
     }
 
-    /* ---------- Vertical lists for Databases/Outreach/Teaching ---------- */
+    /* --- WP1: two images side-by-side in the same frame --- */
+    .wp-image.wp-image--two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .wp-image.wp-image--two img {
+      width: 100%;
+      height: 220px;
+      object-fit: contain;
+      margin: 0;
+      border-radius: 6px;
+      display: block;
+    }
+
+    /* ---------- Vertical lists for Databases/Teaching ---------- */
     .card-list {
       display: flex;
       flex-direction: column;
@@ -348,6 +366,8 @@
 
     @media (max-width: 900px) {
       .wp-layout { grid-template-columns: 1fr; }
+      .wp-image.wp-image--two { grid-template-columns: 1fr; }
+      .wp-image.wp-image--two img { height: auto; }
     }
 
     @media (max-width: 840px) {
@@ -371,7 +391,8 @@
           <li><a href="#about">About</a></li>
           <li><a href="#research">Research</a></li>
           <li><a href="#databases">Databases</a></li>
-          <li><a href="#outreach">Outreach</a></li>
+          <!-- Outreach hidden temporarily -->
+          <!-- <li><a href="#outreach">Outreach</a></li> -->
           <li><a href="#teaching">Teaching</a></li>
           <li><a href="#cv">CV</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -402,8 +423,6 @@
           </div>
 
           <div class="social-icons">
-
-            <!-- EMAIL (PSE) — left click mailto, right click copy -->
             <a href="mailto:a.zuniga-cordero@psemail.eu"
                class="icon-tooltip email-icon"
                data-email="a.zuniga-cordero@psemail.eu"
@@ -414,7 +433,6 @@
               </svg>
             </a>
 
-            <!-- X -->
             <a href="https://x.com/alvarozc"
                class="icon-tooltip"
                data-tooltip="@alvarozc on X"
@@ -426,7 +444,6 @@
               </svg>
             </a>
 
-            <!-- Bluesky -->
             <a href="https://bsky.app/profile/alvarozc.bsky.social"
                class="icon-tooltip"
                data-tooltip="@alvarozc.bsky.social"
@@ -438,7 +455,6 @@
               </svg>
             </a>
 
-            <!-- LinkedIn -->
             <a href="https://www.linkedin.com/in/alvaro-zuniga-cordero-ba327111a/"
                class="icon-tooltip"
                data-tooltip="LinkedIn"
@@ -450,7 +466,6 @@
               </svg>
             </a>
 
-            <!-- Google Scholar -->
             <a href="https://scholar.google.com/citations?user=YOUR_ID"
                class="icon-tooltip"
                data-tooltip="Google Scholar"
@@ -462,7 +477,6 @@
               </svg>
             </a>
 
-            <!-- ORCID -->
             <a href="https://orcid.org/YOUR_ID"
                class="icon-tooltip"
                data-tooltip="ORCID"
@@ -508,7 +522,7 @@
             Research interests: economic inequality, political economy, trade, migration, applied econometrics.
           </p>
 
-          <a class="cv-link" href="CV_AZC (Dec 2025).pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+          <a class="cv-link" href="cv.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
         </div>
       </div>
     </section>
@@ -557,8 +571,9 @@
             </p>
           </div>
 
-          <div class="wp-image">
-            <img src="img/top-10-formal-workers-costa-rica-2018.png" alt="DINA Costa Rica illustration" />
+          <div class="wp-image wp-image--two">
+            <img src="img/top-10-all-workers-costa-rica-2018.png" alt="Top 10 all workers: Costa Rica 2018" />
+            <img src="img/top-10-formal-workers-costa-rica-2018.png" alt="Top 10 formal workers: Costa Rica 2018" />
           </div>
         </div>
       </div>
@@ -647,7 +662,6 @@
         </div>
       </div>
 
-      
       <h4 style="margin-top:2.2rem; font-size:1.25rem;">Work in Progress</h4>
 
       <div class="research-item">
@@ -712,50 +726,43 @@
       </div>
     </section>
 
-    <!-- DATABASES -->
+    <!-- DATABASES (rewritten) -->
     <section id="databases">
       <h3>Databases</h3>
+
       <p>
-        Many of my projects involve constructing and harmonising large administrative and survey datasets.
-        Below is a selection of databases I have developed or contributed to.
+        A core component of my research is building and harmonising administrative, survey, and national-accounts data to
+        produce distributional statistics. In particular, I construct original subnational inequality series for Costa Rica
+        at the <strong>county</strong> and <strong>district</strong> levels using the
+        <strong>Distributional National Accounts (DINA)</strong> methodology (see
+        <em>Distributional National Accounts Costa Rica: Inequality Measures from the National to the Local Level, 2000–2022</em>).
+      </p>
+
+      <p>
+        These series are currently <strong>available upon request</strong> and will be <strong>publicly available soon</strong>.
       </p>
 
       <div class="card-list">
         <div class="card">
-          <div class="card-title">Distributional National Accounts for Costa Rica (2000–2022)</div>
+          <div class="card-title">Subnational Inequality Series (County &amp; District) — Costa Rica</div>
           <p>
-            Integrated microdata combining social security records, tax files, household surveys, census data,
-            and national accounts to produce consistent national and subnational inequality measures.
+            Original inequality measures at the county and district level, designed for spatial analysis and the study of
+            local heterogeneity in distributional dynamics.
           </p>
         </div>
 
         <div class="card">
-          <div class="card-title">Electoral &amp; Socioeconomic Microdata, Costa Rica</div>
+          <div class="card-title">DINA-Based Integrated Microdata Pipeline</div>
           <p>
-            Individual-level voter turnout and registration linked to employer–employee records, local inequality
-            indicators, and polling-station information for presidential and municipal elections.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-title">Climate &amp; Extreme Weather Exposure Dataset, Costa Rica</div>
-          <p>
-            Geo-localised data on extreme weather events and disasters matched to population, economic activity,
-            and electoral outcomes to study the political consequences of climate shocks.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-title">Inequality &amp; Political Cleavages in Latin America (1952–2019)</div>
-          <p>
-            Historical database on social inequalities, parties, and voting patterns in six Latin American countries,
-            developed as part of the World Inequality Lab and Harvard University Press volume.
+            Harmonised inputs combining administrative records, household surveys, and national accounts, assembled to ensure
+            consistency between micro distributions and macro aggregates under the DINA framework.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- OUTREACH -->
+    <!-- OUTREACH temporarily hidden -->
+    <!--
     <section id="outreach">
       <h3>Outreach &amp; Public Engagement</h3>
       <p>
@@ -796,33 +803,50 @@
         </div>
       </div>
     </section>
+    -->
 
-    <!-- TEACHING -->
+    <!-- TEACHING (rewritten from CV) -->
     <section id="teaching">
       <h3>Teaching</h3>
+
       <p>
-        I have taught a range of courses in international trade and econometrics at the graduate and undergraduate levels.
+        I have taught graduate and undergraduate courses in international trade, econometrics, and economics
+        at the Paris School of Economics and Université Paris 1 Panthéon-Sorbonne, in both English and French.
       </p>
 
       <div class="card-list">
         <div class="card">
-          <div class="card-title">International Trade (Graduate) <span class="badge">PSE</span></div>
-          <p>Paris School of Economics, in English (2022–2025), with Thierry Verdier and Matthieu Parenti.</p>
+          <div class="card-title">Paris School of Economics (PSE)</div>
+          <p>
+            <strong>International Trade</strong> (graduate, English), with Thierry Verdier &amp; Matthieu Parenti, 2023–2025.
+          </p>
+          <p>
+            <strong>International Trade</strong> (graduate, English), with Thierry Verdier, 2022–2023.
+          </p>
         </div>
 
         <div class="card">
-          <div class="card-title">Introduction to Econometrics (Undergraduate)</div>
-          <p>Université Paris 1 Panthéon-Sorbonne, in French (2019–2020, 2022–2023).</p>
-        </div>
-
-        <div class="card">
-          <div class="card-title">International Trade (Undergraduate)</div>
-          <p>Université Paris 1 Panthéon-Sorbonne (2018–2023).</p>
-        </div>
-
-        <div class="card">
-          <div class="card-title">Introduction to Economics (Undergraduate)</div>
-          <p>Université Paris 1 Panthéon-Sorbonne, in French (2018–2019).</p>
+          <div class="card-title">Université Paris 1 Panthéon-Sorbonne</div>
+          <p>
+            <strong>Introduction to Econometrics</strong> (undergraduate, French),
+            with Christian Doz &amp; Tobias Broer, 2022–2023.
+          </p>
+          <p>
+            <strong>International Trade</strong> (undergraduate, English),
+            with Laure Marchal, 2022–2023.
+          </p>
+          <p>
+            <strong>Introduction to Econometrics</strong> (undergraduate, French),
+            with Christian Doz &amp; Tobias Broer, 2019–2020.
+          </p>
+          <p>
+            <strong>International Trade</strong> (undergraduate, French),
+            with Lionel Fontagné &amp; Mathieu Bas, 2018–2020.
+          </p>
+          <p>
+            <strong>Introduction to Economics</strong> (undergraduate, French),
+            with Nicolas Canry, Olena Havrylchyk &amp; Anne Greulich, 2018–2019.
+          </p>
         </div>
       </div>
     </section>
@@ -835,7 +859,7 @@
         For full details, please download the PDF.
       </p>
 
-      <a class="button-link" href="CV_AZC (Dec 2025).pdf" target="_blank" rel="noopener">Download full CV (PDF)</a>
+      <a class="button-link" href="cv.pdf" target="_blank" rel="noopener">Download full CV (PDF)</a>
 
       <div class="collapsible" id="cv-collapsible">
         <div class="collapsible-header">
@@ -880,7 +904,7 @@
     <section id="contact">
       <h3>Contact</h3>
       <p>
-        Email: <a href="mailto:a.zuniga-cordero@psemail.eu">a.zuniga-cordero [at] psemail.eu</a>
+        Email: <a href="mailto:a.zuniga-cordero@psemail.eu">a.zuniga-cordero@psemail.eu</a>
       </p>
     </section>
   </main>
