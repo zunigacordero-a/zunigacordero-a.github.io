@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Álvaro Zúñiga-Cordero – Academic Website</title>
 
+  <meta name="google-site-verification" content="L41bfbf2X9dqDKLekPjMHtH18TJzLx1qkLkVbXOhTfM" />
+
+  <!-- Meta description (added) -->
+  <meta name="description" content="Álvaro Zúñiga-Cordero — Postdoctoral Researcher at the University of Namur. Research on inequality, political economy, trade, migration, and climate change." />
+  
   <style>
     /* ---------- Base & Reset ---------- */
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -277,7 +282,24 @@
       margin: 0 auto 0.4rem;
     }
 
-    /* ---------- Vertical lists for Databases/Outreach/Teaching ---------- */
+    /* --- WP1: two images side-by-side in the same frame --- */
+    .wp-image.wp-image--two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .wp-image.wp-image--two img {
+      width: 100%;
+      height: 220px;
+      object-fit: contain;
+      margin: 0;
+      border-radius: 6px;
+      display: block;
+    }
+
+    /* ---------- Vertical lists for Databases/Teaching ---------- */
     .card-list {
       display: flex;
       flex-direction: column;
@@ -348,6 +370,8 @@
 
     @media (max-width: 900px) {
       .wp-layout { grid-template-columns: 1fr; }
+      .wp-image.wp-image--two { grid-template-columns: 1fr; }
+      .wp-image.wp-image--two img { height: auto; }
     }
 
     @media (max-width: 840px) {
@@ -371,7 +395,8 @@
           <li><a href="#about">About</a></li>
           <li><a href="#research">Research</a></li>
           <li><a href="#databases">Databases</a></li>
-          <li><a href="#outreach">Outreach</a></li>
+          <!-- Outreach hidden temporarily -->
+          <!-- <li><a href="#outreach">Outreach</a></li> -->
           <li><a href="#teaching">Teaching</a></li>
           <li><a href="#cv">CV</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -390,8 +415,8 @@
           <img src="PSE_a.zunigo-cordero-41.jpg" alt="Portrait of Álvaro Zúñiga-Cordero" class="profile-photo" />
 
           <div style="margin-top:1.2rem; font-size:0.95rem; line-height:1.5; color:#444;">
-            <div><strong>Marie Skłodowska-Curie COFUND–C2W Postdoctoral Researcher</strong></div>
-            <div>Department of Economics, University of Namur</div>
+            <div><strong>Postdoctoral Researcher</strong></div>
+            <div>Department of Economics, <a href="https://www.unamur.be/" target="_blank" rel="noopener">University of Namur</a></div>
           </div>
 
           <div class="location-row" aria-label="Location">
@@ -402,8 +427,6 @@
           </div>
 
           <div class="social-icons">
-
-            <!-- EMAIL (PSE) — left click mailto, right click copy -->
             <a href="mailto:a.zuniga-cordero@psemail.eu"
                class="icon-tooltip email-icon"
                data-email="a.zuniga-cordero@psemail.eu"
@@ -414,7 +437,6 @@
               </svg>
             </a>
 
-            <!-- X -->
             <a href="https://x.com/alvarozc"
                class="icon-tooltip"
                data-tooltip="@alvarozc on X"
@@ -426,7 +448,6 @@
               </svg>
             </a>
 
-            <!-- Bluesky -->
             <a href="https://bsky.app/profile/alvarozc.bsky.social"
                class="icon-tooltip"
                data-tooltip="@alvarozc.bsky.social"
@@ -438,7 +459,6 @@
               </svg>
             </a>
 
-            <!-- LinkedIn -->
             <a href="https://www.linkedin.com/in/alvaro-zuniga-cordero-ba327111a/"
                class="icon-tooltip"
                data-tooltip="LinkedIn"
@@ -450,7 +470,6 @@
               </svg>
             </a>
 
-            <!-- Google Scholar -->
             <a href="https://scholar.google.com/citations?user=YOUR_ID"
                class="icon-tooltip"
                data-tooltip="Google Scholar"
@@ -462,7 +481,6 @@
               </svg>
             </a>
 
-            <!-- ORCID -->
             <a href="https://orcid.org/YOUR_ID"
                class="icon-tooltip"
                data-tooltip="ORCID"
@@ -481,9 +499,9 @@
           <h1>Welcome!</h1>
 
           <p class="about-paragraph">
-            I am a Marie Skłodowska-Curie COFUND–C2W Postdoctoral Researcher at the University of Namur.
-            I earned my PhD in Economics from the Paris School of Economics in 2024, following the APE master’s
-            programme, and spent 2021–2022 as an exchange researcher at the London School of Economics and the CEP.
+            I am a Marie Skłodowska-Curie COFUND–C2W Postdoctoral Researcher at the <a href="https://www.unamur.be/" target="_blank" rel="noopener">University of Namur</a>.
+            I earned my PhD in Economics from the <a href="https://www.parisschoolofeconomics.eu/" target="_blank" rel="noopener">Paris School of Economics</a> in 2024, following the APE master’s
+            programme, and spent 2021–2022 as an exchange researcher at the <a href="https://www.lse.ac.uk/" target="_blank" rel="noopener">London School of Economics</a> and the <a href="https://cep.lse.ac.uk/" target="_blank" rel="noopener">CEP</a>.
           </p>
 
           <p class="about-paragraph">
@@ -494,21 +512,21 @@
 
           <p class="about-paragraph">
             Before moving to France, I worked in financial markets and later in the Research Department of the
-            Central Bank of Costa Rica. I hold bachelor’s degrees in Economics and Sociology from the University
-            of Costa Rica, and an IB Diploma from Li Po Chun UWC of Hong Kong.
+            <a href="https://www.bccr.fi.cr/" target="_blank" rel="noopener">Central Bank of Costa Rica</a>. I hold bachelor’s degrees in Economics and Sociology from the
+            <a href="https://www.ucr.ac.cr/" target="_blank" rel="noopener">University of Costa Rica</a>, and an IB Diploma from <a href="https://www.lpcuwc.edu.hk" target="_blank" rel="noopener">Li Po Chun UWC of Hong Kong</a>.
           </p>
 
           <p class="about-paragraph">
-            I have consulted for the World Bank and the United Nations ECLAC, I serve as Coordinator for Central
-            America and the Caribbean at the World Inequality Lab, and I am affiliated with the Programa Estado
-            de la Nación in Costa Rica.
+            I have consulted for the <a href="https://www.worldbank.org/" target="_blank" rel="noopener">World Bank</a> and the <a href="https://www.cepal.org/" target="_blank" rel="noopener">United Nations ECLAC</a>, I serve as Coordinator for Central
+            America and the Caribbean at the <a href="https://wid.world/world-inequality-lab/" target="_blank" rel="noopener">World Inequality Lab</a>, and I am affiliated with the <a href="https://estadonacion.or.cr/" target="_blank" rel="noopener">Programa Estado
+            de la Nación</a> in Costa Rica.
           </p>
 
           <p class="tagline">
             Research interests: economic inequality, political economy, trade, migration, applied econometrics.
           </p>
 
-          <a class="cv-link" href="cv.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+          <a class="cv-link" href="CV_AZC (Dec 2025).pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
         </div>
       </div>
     </section>
@@ -529,7 +547,7 @@
           Distributional National Accounts Costa Rica: Inequality Measures from the National to the Local Level, 2000–2022
         </div>
         <div class="research-meta">
-          Solo-authored working paper, ready to submit. (8 citations)
+          Solo-authored working paper.
         </div>
 
         <div class="wp-layout">
@@ -557,8 +575,9 @@
             </p>
           </div>
 
-          <div class="wp-image">
-            <img src="img/top-10-formal-workers-costa-rica-2018.png" alt="DINA Costa Rica illustration" />
+          <div class="wp-image wp-image--two">
+            <img src="img/top-10-all-workers-costa-rica-2018.png" alt="Top 10 all workers: Costa Rica 2018" />
+            <img src="img/top-10-formal-workers-costa-rica-2018.png" alt="Top 10 formal workers: Costa Rica 2018" />
           </div>
         </div>
       </div>
@@ -569,7 +588,7 @@
           Income Shocks, Economic Inequality, and Political Realignment: Voter Turnout and the Shift to a Multi-Party System in Costa Rica
         </div>
         <div class="research-meta">
-          With Ronald Alfaro-Redondo. Job-market paper. (1 citation)
+          With <a href="https://ciep.ucr.ac.cr/ronald-alfaro-redondo/" target="_blank" rel="noopener">Ronald Alfaro-Redondo</a>.
         </div>
 
         <div class="wp-layout">
@@ -613,7 +632,8 @@
           Climate Change and Electoral Behaviour: Evidence from Extreme Weather Events in Costa Rica
         </div>
         <div class="research-meta">
-          With Lorenzo Trimarchi &amp; Juan Robalino.
+          With <a href="https://ltrimarchi.wixsite.com/site" target="_blank" rel="noopener">Lorenzo Trimarchi</a> &amp;
+          <a href="https://economia.ucr.ac.cr/es/profesor/juan-andres-robalino-herrera" target="_blank" rel="noopener">Juan Robalino</a>.
         </div>
 
         <div class="wp-layout">
@@ -647,6 +667,47 @@
         </div>
       </div>
 
+      <!-- WP 4 -->
+      <div class="research-item">
+        <div class="research-title">
+          Equality and Development: A Comparative &amp; Historical Perspective, 1800–2025
+        </div>
+      
+        <div class="research-meta">
+          Andreescu, M., Arias-Osorio, M., Bauluz, L., Bharti, N., Bothe, P., Brassac, P., Chancel, L.,
+          De Rosa, M., Dietrich, J., El Hariri, D., Fisher-Post, M., Flores, I., Gabrielli, V., Gethin, A.,
+          Gómez-Carrera, R., Hong, S., Jenmana, T., Loubes, R., Martínez-Toledano, C., Mo, Z., Mohren, C.,
+          Morgan, M., Moshrif, R., Muti, S., Neef, T., Nievas, G., Odersky, M., Piketty, T.,
+          Robilliard, A.-S., Saez, E., Sodano, A., Somanchi, A., Yang, L., Zucman, G.,
+          <strong>Zúñiga-Cordero, Á.</strong><br />
+          World Inequality Lab Working Paper 2025/25.
+        </div>
+      
+        <div class="wp-layout">
+          <div class="wp-abstract">
+            <strong>Abstract.</strong>
+            <p>
+              This paper uses extended series on income and wealth inequality from the World Inequality
+              Database (WID) covering all world regions over the 1800–2025 period, together with new
+              series on hourly productivity and human capital expenditure, to revisit the relationship
+              between equality and development, with a much broader comparative and historical
+              perspective than previous studies.
+            </p>
+            <p>
+              Over the long run, we find a strong positive association between equality and productivity.
+              Our proposed interpretation is that the rise of inclusive “social-democratic” institutions
+              (including extended access to human capital, public services, and democratic participation)
+              led both to more equality and higher productivity, particularly in Western and Nordic Europe.
+            </p>
+            <p>
+              We discuss the implications for future sustainable development strategies.
+            </p>
+          </div>
+          <div class="Equality2025MainFigures_32">
+          </div>
+        </div>
+      </div>
+
       
       <h4 style="margin-top:2.2rem; font-size:1.25rem;">Work in Progress</h4>
 
@@ -655,7 +716,7 @@
           Airbnb Penetration, Housing Prices, and Distributional Impacts: Evidence from Italy since 2016
         </div>
         <div class="research-meta">
-          With Lorenzo Trimarchi &amp; Giorgio Ferroni.
+          With <a href="https://ltrimarchi.wixsite.com/site" target="_blank" rel="noopener">Lorenzo Trimarchi</a> &amp; Giorgio Ferroni.
         </div>
         <div class="research-note">
           Studies how short-term rentals affect housing markets and inequality across Italian cities.
@@ -676,7 +737,8 @@
           Wealth and Income Inequality in Central America and the Caribbean
         </div>
         <div class="research-meta">
-          With Ignacio Flores &amp; Yajna Govind.
+          With <a href="https://ignacioflores.com" target="_blank" rel="noopener">Ignacio Flores</a> &amp;
+          <a href="https://sites.google.com/view/yajnagovind/home" target="_blank" rel="noopener">Yajna Govind</a>.
         </div>
       </div>
 
@@ -692,8 +754,10 @@
       <h4 style="margin-top:2.2rem; font-size:1.25rem;">Book Chapters and Collaborations</h4>
 
       <div class="research-item">
-        <div class="research-title">World Inequality Report 2022</div>
-        <div class="research-meta">World Inequality Lab, 2022.</div>
+        <div class="research-title">
+          <a href="https://wid.world/" target="_blank" rel="noopener">World Inequality Report 2022 &amp; 2026</a>
+        </div>
+        <div class="research-meta">World Inequality Lab.</div>
         <div class="research-note">
           Contributor to the flagship report on global income and wealth inequality.
         </div>
@@ -706,56 +770,42 @@
         </div>
         <div class="research-meta">
           Barrera, O., Leiva, A., Martínez-Toledano, C. &amp; Zúñiga-Cordero, Á. (2021),
-          in <em>Political Cleavages and Social Inequalities: A Study of Fifty Democracies, 1948–2020</em>,
+          in <em><a href="https://wpid.world" target="_blank" rel="noopener">Political Cleavages and Social Inequalities: A Study of Fifty Democracies, 1948–2020</a></em>,
           Harvard University Press.
         </div>
       </div>
     </section>
 
-    <!-- DATABASES -->
+    <!-- DATABASES (rewritten) -->
     <section id="databases">
       <h3>Databases</h3>
+
       <p>
-        Many of my projects involve constructing and harmonising large administrative and survey datasets.
-        Below is a selection of databases I have developed or contributed to.
+        A core component of my research is building and harmonising administrative, survey, and national-accounts data to
+        produce distributional statistics. In particular, I construct original subnational inequality series for Costa Rica
+        at the <strong>county</strong> and <strong>district</strong> levels using the
+        <strong>Distributional National Accounts (DINA)</strong> methodology (see
+        <em>Distributional National Accounts Costa Rica: Inequality Measures from the National to the Local Level, 2000–2022</em>.
+
+      </p>
+
+      <p>
+        These series are currently <strong>available upon request</strong> and will be <strong>publicly available soon</strong>.
       </p>
 
       <div class="card-list">
         <div class="card">
-          <div class="card-title">Distributional National Accounts for Costa Rica (2000–2022)</div>
+          <div class="card-title">Subnational Inequality Series (County &amp; District) — Costa Rica</div>
           <p>
-            Integrated microdata combining social security records, tax files, household surveys, census data,
-            and national accounts to produce consistent national and subnational inequality measures.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-title">Electoral &amp; Socioeconomic Microdata, Costa Rica</div>
-          <p>
-            Individual-level voter turnout and registration linked to employer–employee records, local inequality
-            indicators, and polling-station information for presidential and municipal elections.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-title">Climate &amp; Extreme Weather Exposure Dataset, Costa Rica</div>
-          <p>
-            Geo-localised data on extreme weather events and disasters matched to population, economic activity,
-            and electoral outcomes to study the political consequences of climate shocks.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-title">Inequality &amp; Political Cleavages in Latin America (1952–2019)</div>
-          <p>
-            Historical database on social inequalities, parties, and voting patterns in six Latin American countries,
-            developed as part of the World Inequality Lab and Harvard University Press volume.
+            Original inequality measures at the county and district level, designed for spatial analysis and the study of
+            local heterogeneity in distributional dynamics.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- OUTREACH -->
+    <!-- OUTREACH temporarily hidden -->
+    <!--
     <section id="outreach">
       <h3>Outreach &amp; Public Engagement</h3>
       <p>
@@ -796,33 +846,46 @@
         </div>
       </div>
     </section>
+    -->
 
-    <!-- TEACHING -->
+    <!-- TEACHING (rewritten from CV) -->
     <section id="teaching">
       <h3>Teaching</h3>
+
       <p>
-        I have taught a range of courses in international trade and econometrics at the graduate and undergraduate levels.
+        I have taught graduate and undergraduate courses in international trade, econometrics, and economics
+        at the <a href="https://www.parisschoolofeconomics.eu/" target="_blank" rel="noopener">Paris School of Economics</a> and <a href="https://www.pantheonsorbonne.fr/" target="_blank" rel="noopener">Université Paris 1 Panthéon-Sorbonne</a>, in both English and French.
       </p>
 
       <div class="card-list">
         <div class="card">
-          <div class="card-title">International Trade (Graduate) <span class="badge">PSE</span></div>
-          <p>Paris School of Economics, in English (2022–2025), with Thierry Verdier and Matthieu Parenti.</p>
+          <div class="card-title">Paris School of Economics (PSE)</div>
+          <p>
+            <strong>International Trade</strong> (graduate, English), with Thierry Verdier &amp; Matthieu Parenti, 2023–2025.
+          </p>
+          <p>
+            <strong>International Trade</strong> (graduate, English), with Thierry Verdier, 2022–2023.
+          </p>
         </div>
 
         <div class="card">
-          <div class="card-title">Introduction to Econometrics (Undergraduate)</div>
-          <p>Université Paris 1 Panthéon-Sorbonne, in French (2019–2020, 2022–2023).</p>
-        </div>
-
-        <div class="card">
-          <div class="card-title">International Trade (Undergraduate)</div>
-          <p>Université Paris 1 Panthéon-Sorbonne (2018–2023).</p>
-        </div>
-
-        <div class="card">
-          <div class="card-title">Introduction to Economics (Undergraduate)</div>
-          <p>Université Paris 1 Panthéon-Sorbonne, in French (2018–2019).</p>
+          <div class="card-title">Université Paris 1 Panthéon-Sorbonne</div>
+          <p>
+            <strong>International Trade</strong> (undergraduate, English),
+            with Léa Marchal, 2022–2023.
+          </p>
+          <p>
+            <strong>Introduction to Econometrics</strong> (undergraduate, French),
+            with Catherine Doz &amp; Tobias Broer, 2019–2020 &amp; 2022–2023.
+          </p>
+          <p>
+            <strong>International Trade</strong> (undergraduate, French),
+            with Lionel Fontagné &amp; María Bas, 2018–2020.
+          </p>
+          <p>
+            <strong>Introduction to Economics</strong> (undergraduate, French),
+            with Nicolas Canry, Olena Havrylchyk &amp; Angela Greulich, 2018–2019.
+          </p>
         </div>
       </div>
     </section>
@@ -835,7 +898,7 @@
         For full details, please download the PDF.
       </p>
 
-      <a class="button-link" href="cv.pdf" target="_blank" rel="noopener">Download full CV (PDF)</a>
+      <a class="button-link" href="CV_AZC (Dec 2025).pdf" target="_blank" rel="noopener">Download full CV (PDF)</a>
 
       <div class="collapsible" id="cv-collapsible">
         <div class="collapsible-header">
@@ -846,17 +909,17 @@
         <div class="collapsible-body">
           <h4>Academic Appointments</h4>
           <ul>
-            <li>Postdoctoral Researcher, Marie Skłodowska-Curie COFUND–C2W, University of Namur (2024–present).</li>
-            <li>Coordinator of Studies for Central America and the Caribbean, World Inequality Lab, PSE (2023–present).</li>
-            <li>Teaching and Research Fellow (ATER), Centre d’Économie de la Sorbonne, Université Paris 1 (2022–2023).</li>
+            <li>Postdoctoral Researcher, Marie Skłodowska-Curie COFUND–C2W, <a href="https://www.unamur.be/" target="_blank" rel="noopener">University of Namur</a> (2024–present).</li>
+            <li>Coordinator of Studies for Central America and the Caribbean, <a href="https://wid.world/world-inequality-lab/" target="_blank" rel="noopener">World Inequality Lab</a>, <a href="https://www.parisschoolofeconomics.eu/" target="_blank" rel="noopener">PSE</a> (2023–present).</li>
+            <li>Teaching and Research Fellow (ATER), Centre d’Économie de la Sorbonne, <a href="https://www.pantheonsorbonne.fr/" target="_blank" rel="noopener">Université Paris 1</a> (2022–2023).</li>
           </ul>
 
           <h4>Education</h4>
           <ul>
-            <li>PhD in Economics, Paris School of Economics &amp; Université Paris 1 (2024).</li>
-            <li>Master in Economics (APE), Paris School of Economics &amp; EHESS (2018).</li>
-            <li>Bachelor’s degrees in Economics and Sociology, University of Costa Rica.</li>
-            <li>International Baccalaureate Diploma, Li Po Chun United World College of Hong Kong.</li>
+            <li>PhD in Economics, <a href="https://www.parisschoolofeconomics.eu/" target="_blank" rel="noopener">Paris School of Economics</a> &amp; <a href="https://www.pantheonsorbonne.fr/" target="_blank" rel="noopener">Université Paris 1</a> (2024).</li>
+            <li>Master in Economics (APE), <a href="https://www.parisschoolofeconomics.eu/" target="_blank" rel="noopener">Paris School of Economics</a> &amp; <a href="https://www.ehess.fr/" target="_blank" rel="noopener">EHESS</a> (2018).</li>
+            <li>Bachelor’s degrees in Economics and Sociology, <a href="https://www.ucr.ac.cr/" target="_blank" rel="noopener">University of Costa Rica</a>.</li>
+            <li>International Baccalaureate Diploma, <a href="https://www.uwc.hk/" target="_blank" rel="noopener">Li Po Chun United World College of Hong Kong</a>.</li>
           </ul>
 
           <h4>Recent Grants (Selected)</h4>
@@ -880,7 +943,7 @@
     <section id="contact">
       <h3>Contact</h3>
       <p>
-        Email: <a href="mailto:a.zuniga-cordero@psemail.eu">a.zuniga-cordero@psemail.eu</a>
+        Email: <a href="mailto:a.zuniga-cordero@psemail.eu">a.zuniga-cordero [at] psemail.eu</a>
       </p>
     </section>
   </main>
